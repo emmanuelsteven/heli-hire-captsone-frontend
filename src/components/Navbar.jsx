@@ -1,9 +1,12 @@
 import React from "react";
 
 class Navbar extends React.Component {
-  state = {
-    drawerPos: 1,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      drawerPos: 1,
+    };
+  }
 
   handleDrawer = () => {
     if (this.state.drawerPos < 2) {
