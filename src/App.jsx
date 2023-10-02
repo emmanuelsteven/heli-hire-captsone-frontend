@@ -1,9 +1,7 @@
+import Navbar from "./components/Navbar";
+
 function App() {
-  return (
-    <div className="bg-black">
-      <h1 className="text-white">practice tailwind</h1>
-    </div>
-  );
+  return <Navbar />;
 }
 
 export default App;
