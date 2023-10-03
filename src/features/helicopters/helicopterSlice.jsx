@@ -24,7 +24,5 @@ const helicopterSlice = createSlice({
     },
 });
 
-console.log(helicopterSlice);
-
 export { fetchHelicopters };
 export default helicopterSlice.reducer;

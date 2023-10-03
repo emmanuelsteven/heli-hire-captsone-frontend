@@ -74,6 +74,8 @@ img {
 .image img {
   border-radius: 50%;
   border: 10px solid white;
+  height: 200px;
+  width: 200px;
 }
 
 .latest-models {
