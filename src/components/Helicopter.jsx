@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
+import { Icon } from '@iconify/react';
 
 const HelicopterList = () => {
     const { helicopter } = useSelector((state) => state.helicopter);
@@ -13,8 +14,9 @@ const HelicopterList = () => {
 
      return (
         <section className="home-page">
-            <h1>LATEST MODELS</h1>
-            <p>Please select a chopper to hire</p>
+            <h1 className="latest-models">LATEST MODELS</h1>
+            <p className="description-1">Please select a chopper to hire</p>
+            <div className="span">...............</div>
             <div className="choppers">
                 {helicopter.map((helicopter) => {
                     const { name, image, description, id } = helicopter
@@ -29,9 +31,17 @@ const Helicopter = (props) => {
     const { name, image, description } = props.helicopter;
     return (
         <article className="chopper">
+            <div className="image">
             <img src={image} alt={name} />
-            <h2>{name}</h2>
-            <p>{description}</p>
+            </div>
+            <h2 className="name">{name}</h2>
+            <div className="span">.........</div>
+            <p className="description">{description}</p>
+            <ul className="icons">
+                <li><Icon icon="la:facebook" /></li>
+                <li><Icon icon="jam:twitter-circle" /></li>
+                <li><Icon icon="entypo-social:instagram-with-circle" /></li>
+            </ul>
         </article>
     )
 }

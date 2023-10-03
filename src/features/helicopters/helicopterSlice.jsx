@@ -5,7 +5,6 @@ const url = 'http://localhost:3000/api/helicopter'
 const fetchHelicopters = createAsyncThunk('helicopter/fetchHelicopters', async () => {
       const response = await fetch(url);
       const data = await response.json();
-      console.log(data);
       return data;
  }); 
   
@@ -24,6 +23,8 @@ const helicopterSlice = createSlice({
         });
     },
 });
+
+console.log(helicopterSlice);
 
 export { fetchHelicopters };
 export default helicopterSlice.reducer;
