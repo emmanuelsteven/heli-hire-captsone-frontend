@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
 import { Icon } from '@iconify/react';
+import PropTypes from 'prop-types';
 
 const HelicopterList = () => {
     const { helicopter } = useSelector((state) => state.helicopter);
@@ -20,7 +21,7 @@ const HelicopterList = () => {
             <div className="back"><Icon icon="grommet-icons:caret-next" rotate={2} /></div>
             <div className="choppers">
                 {helicopter.map((helicopter) => {
-                    const { name, image, description, id } = helicopter
+                    const { id } = helicopter
                     return <Helicopter helicopter={helicopter} key={id} />
             })}
             </div>
@@ -48,5 +49,13 @@ const Helicopter = (props) => {
         </article> 
     )
 }
+
+Helicopter.propTypes = {
+    helicopter: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    }).isRequired,
+};
 
 export default HelicopterList;
