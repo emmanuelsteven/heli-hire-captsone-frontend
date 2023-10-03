@@ -1,63 +1,52 @@
+import { useState } from "react";
+import * as FaIcons from "react-icons/fa";
+import * as AiIcons from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTrash,
-  faUser,
-  faHelicopter,
-  faCartPlus,
-  faHouse,
-  faRightFromBracket,
-} from "@fortawesome/free-solid-svg-icons";
-export default function Navbar() {
+import { SidebarData } from "./SidebarData";
+import { IconContext } from "react-icons";
+import { RxExit } from "react-icons/rx";
+function Navbar() {
+  const [sidebar, setSidebar] = useState(false);
+
+  const showSidebar = () => setSidebar(!sidebar);
+
   return (
     <>
-      <div className="side-bar">
-        <ul>
-          <li>
-            <Link className="my-link">
-              <FontAwesomeIcon className="icon" icon={faUser} />
-            </Link>
-          </li>
-        </ul>
-        <ul className="main-nav">
-          <li>
-            <Link className="my-link">
-              <FontAwesomeIcon className="icon" icon={faHouse} /> <p>Home</p>
-            </Link>
-          </li>
-          <li>
-            <Link className="my-link">
-              {" "}
-              <FontAwesomeIcon className="icon" icon={faHelicopter} />
-              <p>HeliCopters</p>
-            </Link>
-          </li>
-          <li>
-            <Link className="my-link">
-              <FontAwesomeIcon className="icon" icon={faCartPlus} />
-              <p>Add Helicopter</p>
-            </Link>
-          </li>
-          <li>
-            <Link className="my-link">
-              <FontAwesomeIcon className="icon" icon={faTrash} />
-              <p>Delete Helicopter</p>
-            </Link>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <Link className="my-link">
-              <FontAwesomeIcon className="icon" icon={faRightFromBracket} />
-            </Link>
-          </li>
-        </ul>
-      </div>
-      <main className="main-text">
-        <div>
-          <h1>Heli Hire</h1>
+      <IconContext.Provider value={{ color: "#fff" }}>
+        <div className="navbar">
+          <Link to="#" className="menu-bars">
+            <FaIcons.FaBars onClick={showSidebar} />
+          </Link>
         </div>
-      </main>
+        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+          <ul className="nav-menu-items" onClick={showSidebar}>
+            <li className="navbar-toggle">
+              <Link to="#" className="menu-bars">
+                <AiIcons.AiOutlineClose />
+              </Link>
+            </li>
+            {SidebarData.map((item, index) => {
+              return (
+                <li key={index} className={item.cName}>
+                  <Link to={item.path}>
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+          <ul className="log-out">
+            <li className="log-out-link">
+              <Link to="/">
+                <RxExit />
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      </IconContext.Provider>
     </>
   );
 }
+
+export default Navbar;
