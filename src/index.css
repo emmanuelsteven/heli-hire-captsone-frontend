@@ -56,7 +56,7 @@ img {
 .icons {
     display: flex;
     font-size: 1.5rem;
-    filter: grayscale(100%) contrast(0%);
+    color: hsl(240deg 3.25% 77.22%);
     padding: 7% 0;
     gap: 7%;
     align-items: center;
@@ -86,4 +86,29 @@ img {
 .name {
     color: #121212;
     font-weight: bold;
+}
+
+.back {
+    position: absolute;
+    left: 0;
+    background: #efefef;
+    font-size: large;
+    padding: 13px;
+    color: white;
+    border-top-right-radius: 23px;
+    border-bottom-right-radius: 23px;
+    width: 8%;
+}
+
+.next {
+    position: absolute;
+    right: 0;
+    background: #96be0d;
+    font-size: large;
+    padding: 13px;
+    color: white;
+    width: 8%;
+    border-bottom-left-radius: 23px;
+    border-top-left-radius: 23px;
+    padding-left: 22px;
 }

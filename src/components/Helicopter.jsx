@@ -17,12 +17,14 @@ const HelicopterList = () => {
             <h1 className="latest-models">LATEST MODELS</h1>
             <p className="description-1">Please select a chopper to hire</p>
             <div className="span">...............</div>
+            <div className="back"><Icon icon="grommet-icons:caret-next" rotate={2} /></div>
             <div className="choppers">
                 {helicopter.map((helicopter) => {
                     const { name, image, description, id } = helicopter
                     return <Helicopter helicopter={helicopter} key={id} />
             })}
             </div>
+            <div className="next"><Icon icon="grommet-icons:caret-next" /></div>
         </section>
      )
 }
@@ -30,6 +32,7 @@ const HelicopterList = () => {
 const Helicopter = (props) => {
     const { name, image, description } = props.helicopter;
     return (
+        
         <article className="chopper">
             <div className="image">
             <img src={image} alt={name} />
@@ -42,7 +45,7 @@ const Helicopter = (props) => {
                 <li><Icon icon="jam:twitter-circle" /></li>
                 <li><Icon icon="entypo-social:instagram-with-circle" /></li>
             </ul>
-        </article>
+        </article> 
     )
 }
 
