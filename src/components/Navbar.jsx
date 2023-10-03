@@ -41,7 +41,7 @@ export default function Navbar() {
           <li>
             <Link className="my-link">
               <FontAwesomeIcon className="icon" icon={faTrash} />
-              <p>Delete</p>
+              <p>Delete Helicopter</p>
             </Link>
           </li>
         </ul>
@@ -53,6 +53,11 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
+      <main className="main-text">
+        <div>
+          <h1>Heli Hire</h1>
+        </div>
+      </main>
     </>
   );
 }
