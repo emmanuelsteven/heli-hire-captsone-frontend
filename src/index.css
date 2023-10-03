@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+img {
+    width: 10rem;
+}
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem 0;
+}
+
+.choppers {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 2rem 1rem;
+}

@@ -1,8 +1,13 @@
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import HelicopterList from "./components/Helicopter";
+
+
 function App() {
   return (
-    <div className="bg-black">
-      <h1 className="text-white">practice tailwind</h1>
-    </div>
+    <Routes>
+      <Route path="/" element={<HelicopterList />} />
+    </Routes>
   );
 }
 
