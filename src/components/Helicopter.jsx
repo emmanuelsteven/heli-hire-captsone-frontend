@@ -3,9 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
 import { Icon } from '@iconify/react';
 import PropTypes from 'prop-types';
+import { nextPage, prevPage,  } from "../features/pagination/paginationSlice";
 
 const HelicopterList = () => {
     const { helicopter } = useSelector((state) => state.helicopter);
+    const { currentPage, itemsPerPage } = useSelector((state) => state.pagination);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -13,19 +15,31 @@ const HelicopterList = () => {
     }, [dispatch]);
 
 
+    const indexOfLastHelicopter = currentPage * itemsPerPage;
+
+    const endIndex = Math.min(indexOfLastHelicopter, helicopter.length);
+    const startIndex = Math.max(0, endIndex - itemsPerPage);
+
+    const currentHelicopters = helicopter.slice(startIndex, endIndex);
+
+
      return (
         <section className="home-page">
             <h1 className="latest-models">LATEST MODELS</h1>
             <p className="description-1">Please select a chopper to hire</p>
             <div className="span">...............</div>
-            <div className="back"><Icon icon="grommet-icons:caret-next" rotate={2} /></div>
+            <div className="back" onClick={() => dispatch(prevPage())}>
+                <Icon icon="grommet-icons:caret-next" rotate={2} />
+            </div>
             <div className="choppers">
-                {helicopter.map((helicopter) => {
+                {currentHelicopters.map((helicopter) => {
                     const { id } = helicopter
                     return <Helicopter helicopter={helicopter} key={id} />
             })}
             </div>
-            <div className="next"><Icon icon="grommet-icons:caret-next" /></div>
+            <div className="next" onClick={() => dispatch(nextPage())}>
+                <Icon icon="grommet-icons:caret-next" />
+            </div>
         </section>
      )
 }
