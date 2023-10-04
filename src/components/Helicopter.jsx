@@ -20,6 +20,8 @@ const HelicopterList = () => {
     const endIndex = Math.min(indexOfLastHelicopter, helicopter.length);
     const startIndex = Math.max(0, endIndex - itemsPerPage);
 
+    const isNextDisabled = indexOfLastHelicopter >= helicopter.length;
+
     const currentHelicopters = helicopter.slice(startIndex, endIndex);
 
 
@@ -28,18 +30,18 @@ const HelicopterList = () => {
             <h1 className="latest-models">LATEST MODELS</h1>
             <p className="description-1">Please select a chopper to hire</p>
             <div className="span">...............</div>
-            <div className="back" onClick={() => dispatch(prevPage())}>
+            <button className="back" onClick={() => dispatch(prevPage())}>
                 <Icon icon="grommet-icons:caret-next" rotate={2} />
-            </div>
+            </button>
             <div className="choppers">
                 {currentHelicopters.map((helicopter) => {
                     const { id } = helicopter
                     return <Helicopter helicopter={helicopter} key={id} />
             })}
             </div>
-            <div className="next" onClick={() => dispatch(nextPage())}>
+            <button className="next" onClick={() => dispatch(nextPage())} disabled={isNextDisabled}>
                 <Icon icon="grommet-icons:caret-next" />
-            </div>
+            </button>
         </section>
      )
 }
