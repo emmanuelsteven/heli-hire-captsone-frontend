@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 
-const url = 'http://localhost:3000/signup'
+const url = 'http://localhost:3000/login'
 
-const fetchsignup = createAsyncThunk('signup/fetchsignup', async (userData) => {
+const fetchlogin = createAsyncThunk('login/fetchlogin', async (userData) => {
     const response = await fetch(url, {
         method: 'POST',
         headers: {
@@ -11,7 +11,6 @@ const fetchsignup = createAsyncThunk('signup/fetchsignup', async (userData) => {
         },
         body: JSON.stringify({
             user: {
-                name: userData.name,
                 email: userData.email,
                 password: userData.password,
             }
@@ -19,7 +18,7 @@ const fetchsignup = createAsyncThunk('signup/fetchsignup', async (userData) => {
     });
 
     if (!response.ok) {
-        throw new Error('Failed to signup');
+        throw new Error('Failed to login');
     }
 
     const data = await response.json();
@@ -28,7 +27,6 @@ const fetchsignup = createAsyncThunk('signup/fetchsignup', async (userData) => {
 
 const initialState = {
     user: {
-        name: '',
         email: '',
         password: '',
       },
@@ -36,26 +34,27 @@ const initialState = {
       error: null,
 };
 
-const signupSlice = createSlice({
-    name: 'signup',
+const loginSlice = createSlice({
+    name: 'login',
     initialState,
     reducers: {},
     extraReducers(builder) {
         builder
-            .addCase(fetchsignup.pending, (state) => {
+            .addCase(fetchlogin.pending, (state) => {
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(fetchsignup.fulfilled, (state, action) => {
+            .addCase(fetchlogin.fulfilled, (state, action) => {
                 state.loading = false;
                 state.user = action.payload;
+                console.log(action.payload);
             })
-            .addCase(fetchsignup.rejected, (state, action) => {
+            .addCase(fetchlogin.rejected, (state, action) => {
                 state.loading = false;
                 state.error = action.error.message;
             });
     }
 });
 
-export { fetchsignup };
-export default signupSlice.reducer;
+export { fetchlogin };
+export default loginSlice.reducer;

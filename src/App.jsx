@@ -1,11 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import HelicopterList from "./components/Helicopter";
-import Signup from "./components/loginpage/Signup";
+import Signup from "./components/registration/Signup";
+import Login from "./components/registration/Login";
 
 
 function App() {
   return (
-    <Routes>
+    <Routes> 
+      <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/" element={<HelicopterList />} />
     </Routes>

@@ -7,7 +7,6 @@ const Signup = () => {
     name: '',
     email: '',
     password: '',
-    password_confirmation: '',
   });
 
   const dispatch = useDispatch();
@@ -25,7 +24,6 @@ const Signup = () => {
       name: '',
       email: '',
       password: '',
-      password_confirmation: '',
     });
   };
 
@@ -34,7 +32,7 @@ const Signup = () => {
     <div className='background-cover'>
         <div className='register'>
 
-      <h2>Sign Up</h2>
+      <h2 className='signup-title'>Sign Up</h2>
       <form className='form-page' onSubmit={handleSubmit}>
         <div>
           <input
@@ -60,15 +58,6 @@ const Signup = () => {
             type="password"
             name="password"
             value={formData.password}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <input
-          placeholder='password_confirmation'
-            type="password"
-            name="password_confirmation"
-            value={formData.password_confirmation}
             onChange={handleInputChange}
           />
         </div>
