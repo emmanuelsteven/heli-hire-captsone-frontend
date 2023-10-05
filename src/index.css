@@ -172,7 +172,7 @@ input {
 
 .item-form {
   margin-bottom: 1rem;
-  color: rgb(130, 119, 119);
+  color: hsla(0,0%,100%,1);
   font-weight: bold;
   font-size: 1.5rem;
 }
