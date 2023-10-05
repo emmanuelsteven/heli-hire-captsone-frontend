@@ -10,7 +10,7 @@ const fetchHelicopters = createAsyncThunk('helicopter/fetchHelicopters', async (
   
 const initialState = {
     helicopter: [],
-}
+} 
 
 const helicopterSlice = createSlice({
     name: 'helicopter',
