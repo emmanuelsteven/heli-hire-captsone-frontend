@@ -1,7 +1,23 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 
-
 const AddItem = () => {
+    const [ formData, setFormDat ] = useState({
+        name: '',
+        contact: '',
+        price: '',
+        carriage_capacity: '',
+        image: '',
+        model: '',
+        description: '',
+    })
+    const handleFormInput = () => {
+
+    };
+
+    const handleFormSubmission = () => {
+
+    };
 
     return (
         <section>
@@ -9,6 +25,7 @@ const AddItem = () => {
                 <h2>Add New Helicopter</h2>
                 <div>     
                     <input
+                    placeholder="Helicopter name"
                     type='text'
                     name='name'
                     onChange={handleFormInput}
@@ -16,6 +33,7 @@ const AddItem = () => {
                 </div>
                 <div>
                     <input
+                    placeholder="contact email"
                     type="text"
                     name="contact"
                     onChange={handleFormInput}
@@ -23,6 +41,7 @@ const AddItem = () => {
                 </div>
                 <div>
                     <input 
+                    placeholder="price/hr"
                     type="number"
                     name="price" 
                     onChange={handleFormInput}
@@ -30,6 +49,7 @@ const AddItem = () => {
                 </div>
                 <div>
                     <input 
+                    placeholder="carriage capacity"
                     type="number"
                     name="carriage_capacity"
                     onChange={handleFormInput}
@@ -37,6 +57,7 @@ const AddItem = () => {
                 </div>
                 <div>
                     <input 
+                    placeholder="image url"
                     type="text"
                     name="image"
                     onChange={handleFormInput}
@@ -44,6 +65,7 @@ const AddItem = () => {
                 </div>
                 <div>
                     <input 
+                    placeholder="model number"
                     type="number"
                     name="model"
                     onChange={handleFormInput}
@@ -51,7 +73,8 @@ const AddItem = () => {
                 </div>
                 <div>
                     <input 
-                    type="text"
+                    placeholder="description "
+                    type="textarea"
                     name="description"
                     onChange={handleFormInput}
                      />

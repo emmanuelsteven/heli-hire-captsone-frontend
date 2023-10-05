@@ -6,7 +6,7 @@ import AddItem from "./components/AddItem";
 function App() {
   return (
     <Routes>
-      <Route path="/addItm" element={<AddItem />} />
+      <Route path="/addItem" element={<AddItem />} />
       <Route path="/" element={<HelicopterList />} />
     </Routes>
   );

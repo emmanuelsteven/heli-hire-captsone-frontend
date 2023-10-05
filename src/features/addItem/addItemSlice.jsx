@@ -15,7 +15,6 @@ const addItemSlice = createSlice({
     name: 'item',
     initialState,
     reducers: {},
-    extraReducers,
 })
 
 export { addItem };
