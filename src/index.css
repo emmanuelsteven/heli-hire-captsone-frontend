@@ -155,8 +155,13 @@ img {
 
 input {
   border: 2px solid darkgray;
-  padding: 3px;
-  border-radius: 5px;
+    padding: 2px 10px;
+    border-radius: 8px;
+    width: 20rem;
+    font-feature-settings: inherit;
+  font-family: monospace;
+  font-size: small;
+    
 }
 
 .btn {
@@ -184,4 +189,15 @@ input {
   background: white;
   color: #9cc117;
   margin-top: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  width: 19.7rem;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: small;
+  font-feature-settings: inherit;
+  font-family: monospace;
+  height: 5rem;
 }

@@ -93,7 +93,7 @@ const AddItem = () => {
                         />
                     </div>
                     <div>
-                        <input 
+                        <textarea 
                         placeholder="description "
                         type="textarea"
                         name="description"
