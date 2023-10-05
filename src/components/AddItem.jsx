@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
+import addItem from "../features/addItem/addItemSlice";
 
 const AddItem = () => {
-    const [ formData, setFormDat ] = useState({
+    const dispatch = useDispatch();
+
+    const [ formData, setFormData ] = useState({
         name: '',
         contact: '',
         price: '',
@@ -11,12 +14,23 @@ const AddItem = () => {
         model: '',
         description: '',
     })
-    const handleFormInput = () => {
-
+    const handleFormInput = (event) => {
+        const { name, value } = event.target;
+        setFormData({ ...formData, [name]: value })
     };
 
-    const handleFormSubmission = () => {
-
+    const handleFormSubmission = async (event) => {
+        event.preventDefault();
+        await dispatch(addItem(formData));
+        formData({
+            name: '',
+        contact: '',
+        price: '',
+        carriage_capacity: '',
+        image: '',
+        model: '',
+        description: '',
+        })
     };
 
     return (
@@ -28,6 +42,7 @@ const AddItem = () => {
                     placeholder="Helicopter name"
                     type='text'
                     name='name'
+                    value={formData.name}
                     onChange={handleFormInput}
                     />
                 </div>
@@ -36,6 +51,7 @@ const AddItem = () => {
                     placeholder="contact email"
                     type="text"
                     name="contact"
+                    value={formData.contact}
                     onChange={handleFormInput}
                     />
                 </div>
@@ -44,6 +60,7 @@ const AddItem = () => {
                     placeholder="price/hr"
                     type="number"
                     name="price" 
+                    value={formData.price}
                     onChange={handleFormInput}
                      />
                 </div>
@@ -52,6 +69,7 @@ const AddItem = () => {
                     placeholder="carriage capacity"
                     type="number"
                     name="carriage_capacity"
+                    value={formData.carriage_capacity}
                     onChange={handleFormInput}
                      />
                 </div>
@@ -60,6 +78,7 @@ const AddItem = () => {
                     placeholder="image url"
                     type="text"
                     name="image"
+                    value={formData.image}
                     onChange={handleFormInput}
                     />
                 </div>
@@ -68,6 +87,7 @@ const AddItem = () => {
                     placeholder="model number"
                     type="number"
                     name="model"
+                    value={formData.model}
                     onChange={handleFormInput}
                      />
                 </div>
@@ -76,6 +96,7 @@ const AddItem = () => {
                     placeholder="description "
                     type="textarea"
                     name="description"
+                    value={formData.description}
                     onChange={handleFormInput}
                      />
                 </div>
