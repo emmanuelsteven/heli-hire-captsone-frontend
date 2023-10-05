@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchsignup } from '../../features/signup/signupSlice';
 
@@ -10,7 +10,7 @@ const Signup = () => {
   });
 
   const dispatch = useDispatch();
-  const { loading, error, user } = useSelector((state) => state.signup);
+  const { loading } = useSelector((state) => state.signup);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;

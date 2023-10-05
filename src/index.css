@@ -120,7 +120,6 @@ img {
   justify-content: center;
   display: flex;
   align-items: center;
-  align-items: center;
   flex-direction: column;
   height: 100vh;
   background-image: url(./assets/images/background.jpg);
@@ -154,24 +153,24 @@ img {
 
 input {
   border: 2px solid darkgray;
-    padding: 3px;
-    border-radius: 5px;
+  padding: 3px;
+  border-radius: 5px;
 }
 
 .btn {
   border-radius: 5px;
-    border: 1px solid lightgray;
-    padding: 2px 4px;
-    color: white;
-    background-color: #f17900;
-    filter: drop-shadow(2px 4px 6px black);
-    margin-top: 1rem;
-    font-weight: 900;
+  border: 1px solid lightgray;
+  padding: 2px 4px;
+  color: white;
+  background-color: #f17900;
+  filter: drop-shadow(2px 4px 6px black);
+  margin-top: 1rem;
+  font-weight: 900;
 }
 
 .signup-title {
   margin-bottom: 1rem;
-    color: hsla(0,0%,13%,1);
-    font-weight: bold;
-    font-size: revert;
+  color: hsla(0, 0%, 13%, 1);
+  font-weight: bold;
+  font-size: 1.5rem;
 }

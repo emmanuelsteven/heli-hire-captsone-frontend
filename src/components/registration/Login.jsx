@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchlogin } from '../../features/Login/loginSlice';
 
@@ -11,7 +11,7 @@ const Login = () => {
   });
 
   const dispatch = useDispatch();
-  const { loading, error, user } = useSelector((state) => state.login);
+  const { loading } = useSelector((state) => state.login);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
