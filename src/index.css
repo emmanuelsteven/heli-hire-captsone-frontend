@@ -161,7 +161,7 @@ input {
     font-feature-settings: inherit;
   font-family: monospace;
   font-size: small;
-    
+  filter: opacity(0.9);
 }
 
 .btn {
@@ -199,5 +199,6 @@ textarea {
   font-size: small;
   font-feature-settings: inherit;
   font-family: monospace;
-  height: 5rem;
+  height: 4rem;
+  filter: opacity(0.9);
 }
