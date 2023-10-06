@@ -50,7 +50,7 @@ const addItemSlice = createSlice({
           .addCase(addItem.fulfilled, (state, action) => {
             state.loading = false;
             state.helicopter = action.payload;
-            console.log('Data:', action.payload);
+            console.log(action.payload);
           })
           .addCase(addItem.rejected, (state, action) => {
                 state.loading = false;

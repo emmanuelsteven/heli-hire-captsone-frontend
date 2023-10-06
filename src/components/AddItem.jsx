@@ -1,18 +1,37 @@
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setFormData, addItem } from "../features/addItem/addItemSlice";
+import { addItem } from "../features/addItem/addItemSlice";
 
 const AddItem = () => {
-  const formData = useSelector((state) => state.item);
+const [formData, setFormData] = useState({
+    name: '',
+    contact: '',
+    price: '',
+    carriage_capacity: '',
+    image: '',
+    model: '',
+    description: '',
+})
   const dispatch = useDispatch();
+  const { loading } = useSelector((state) => state.item)
 
   const handleFormInput = (event) => {
     const { name, value } = event.target;
-    dispatch(setFormData({ ...formData, [name]: value }));
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleFormSubmission = async (event) => {
     event.preventDefault();
     await dispatch(addItem(formData));
+    setFormData({
+        name: '',
+        contact: '',
+        price: '',
+        carriage_capacity: '',
+        image: '',
+        model: '',
+        description: '',
+    })
   };
 
   return (
@@ -82,8 +101,8 @@ const AddItem = () => {
               onChange={handleFormInput}
             />
           </div>
-          <button className="submit-btn" type="submit">
-            submit form
+          <button className="submit-btn" type="submit" disabled={loading}>
+            {loading ? 'submiting form..' : 'submit form'}
           </button>
         </form>
       </div>
