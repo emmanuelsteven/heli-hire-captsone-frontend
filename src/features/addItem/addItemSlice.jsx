@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 const  url = 'http://localhost:3000/api/helicopter'
 
-const addItem = createAsyncThunk('item/addItem', async () => {
+const addItem = createAsyncThunk('item/addItem', async (formData) => {
     try {
         const response = await fetch(url, {
             method: 'POST',
