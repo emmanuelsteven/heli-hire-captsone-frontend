@@ -8,14 +8,34 @@ const addItem = createAsyncThunk('item/addItem', async () => {
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+            helicopter: {
+                name: formData.name,
+                contact: formData.contact,
+                price: formData.price,
+                carriage_capacity: formData.carriage_capacity,
+                image: formData.image,
+                model: formData.model,
+                description: formData.description,
+            }
+        })
     });
     const data = await response.json();
     return data;
 });
 
 const initialState = {
-   item: []
+  helicopter: {
+    name: '',
+    contact: '',
+    price: '',
+    carriage_capacity: '',
+    image: '',
+    model: '',
+    description: '',
+  },
+  loading: false,
+  error: null,
 }
 const addItemSlice = createSlice({
     name: 'item',
@@ -24,16 +44,17 @@ const addItemSlice = createSlice({
     extraReducers: (builder) => {
         builder
           .addCase(addItem.pending, (state) => {
-            // Handle pending state if needed
+            state.loading = true;
+            state.error = null;
           })
           .addCase(addItem.fulfilled, (state, action) => {
-            // Handle the successful response here
+            state.loading = false;
+            state.helicopter = action.payload;
             console.log('Data:', action.payload);
-            // You can update your state here if needed
           })
           .addCase(addItem.rejected, (state, action) => {
-            // Handle the error state if needed
-            console.error('Error:', action.error);
+                state.loading = false;
+                state.error = action.error.message;
           });
       },
 })
