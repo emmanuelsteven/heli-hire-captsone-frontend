@@ -1,15 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import HelicopterList from "./components/Helicopter";
-import Signup from "./components/registration/Signup";
-import Login from "./components/registration/Login";
+import Login from "./components/sessions/login";
+import Register from "./components/sessions/signup";
 
 
 function App() {
   return (
     <Routes> 
+      <Route path="/" element={<Register />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/" element={<HelicopterList />} />
+      <Route path="/helicopters" element={<HelicopterList />} />
     </Routes>
   );
 }
