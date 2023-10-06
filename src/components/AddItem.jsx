@@ -3,15 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../features/addItem/addItemSlice";
 
 const AddItem = () => {
-const [formData, setFormData] = useState({
-    name: '',
-    contact: '',
-    price: '',
-    carriage_capacity: '',
-    image: '',
-    model: '',
-    description: '',
-})
+    const [formData, setFormData] = useState({
+        name: '',
+        contact: '',
+        price: '',
+        carriage_capacity: '',
+        image: '',
+        model: '',
+        description: '',
+    });
+
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.item)
 
@@ -23,6 +24,7 @@ const [formData, setFormData] = useState({
   const handleFormSubmission = async (event) => {
     event.preventDefault();
     await dispatch(addItem(formData));
+    // console.log(formData);
     setFormData({
         name: '',
         contact: '',
