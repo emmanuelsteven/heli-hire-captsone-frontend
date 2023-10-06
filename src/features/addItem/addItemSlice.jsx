@@ -14,39 +14,29 @@ const addItem = createAsyncThunk('item/addItem', async () => {
     return data;
 });
 
-const initialstate = {
-    name: '',
-    contact: '',
-    price: '',
-    carriage_capacity: '',
-    image: '',
-    model: '',
-    description: '',
+const initialState = {
+   item: []
 }
 const addItemSlice = createSlice({
     name: 'item',
-    initialstate,
-    reducers: {
-        setFormData: (state, action) => {
-            return { ...state, ...action.payload };
-        },
-    },
-    extraReducers(builder) {
-        builder.addCase(addItem.fulfilled, (state, action) => {
-            return {
-                ...state, 
-                name: action.payload.name,
-                contact: action.payload.contact,
-                price: action.payload.price,
-                carriage_capacity: action.payload.carriage_capacity,
-                image: action.payload.image,
-                model: action.payload.model,
-                description: action.payload.description
-            }
-        })
-    }
+    initialState,
+    reducers: {},
+    extraReducers: (builder) => {
+        builder
+          .addCase(addItem.pending, (state) => {
+            // Handle pending state if needed
+          })
+          .addCase(addItem.fulfilled, (state, action) => {
+            // Handle the successful response here
+            console.log('Data:', action.payload);
+            // You can update your state here if needed
+          })
+          .addCase(addItem.rejected, (state, action) => {
+            // Handle the error state if needed
+            console.error('Error:', action.error);
+          });
+      },
 })
 
 export { addItem };
-export const { setFormData } = addItemSlice.actions;
 export default addItemSlice.reducer;
