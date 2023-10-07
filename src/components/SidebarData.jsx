@@ -10,13 +10,13 @@ export const SidebarData = [
     cName: "nav-text",
   },
   {
-    title: "Add Helicopter",
+    title: "Add Item",
     path: "/",
     icon: <FaIcons.FaCartPlus />,
     cName: "nav-text",
   },
   {
-    title: "Delete Helicpoter",
+    title: "Delete Item",
     path: "/products",
     icon: <FaIcons.FaTrash />,
     cName: "nav-text",
