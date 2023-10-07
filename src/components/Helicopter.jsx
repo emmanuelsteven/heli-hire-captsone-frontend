@@ -6,6 +6,7 @@ import { Icon } from '@iconify/react';
 import PropTypes from 'prop-types';
 import { nextPage, prevPage,  } from "../features/pagination/paginationSlice";
 import { logOut } from "../features/sessions/sessionsSlice";
+import { Link } from "react-router-dom";
 
 const HelicopterList = () => {
     const isLoggedIn = useSelector((state) => state.sessions.loggedIn);
@@ -14,8 +15,6 @@ const HelicopterList = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    console.log('HelicopterList rendered. IsLoggedIn:', isLoggedIn);
-
     const logOutUser = () => {
         sessionStorage.clear();
         localStorage.clear()
@@ -23,20 +22,18 @@ const HelicopterList = () => {
         navigate('/');
     }
 
-    useEffect(() => {
-        dispatch(fetchHelicopters());
-    }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchHelicopters());
+  }, [dispatch]);
 
+  const indexOfLastHelicopter = currentPage * itemsPerPage;
 
-    const indexOfLastHelicopter = currentPage * itemsPerPage;
+  const endIndex = Math.min(indexOfLastHelicopter, helicopter.length);
+  const startIndex = Math.max(0, endIndex - itemsPerPage);
 
-    const endIndex = Math.min(indexOfLastHelicopter, helicopter.length);
-    const startIndex = Math.max(0, endIndex - itemsPerPage);
+  const isNextDisabled = indexOfLastHelicopter >= helicopter.length;
 
-    const isNextDisabled = indexOfLastHelicopter >= helicopter.length;
-
-    const currentHelicopters = helicopter.slice(startIndex, endIndex);
-
+  const currentHelicopters = helicopter.slice(startIndex, endIndex);
 
      return (
         <section className="home-page">
@@ -69,31 +66,39 @@ const HelicopterList = () => {
 }
 
 const Helicopter = (props) => {
-    const { name, image, description } = props.helicopter;
-    return (
-        
-        <article className="chopper">
-            <div className="image">
-            <img src={image} alt={name} />
-            </div>
-            <h2 className="name">{name}</h2>
-            <div className="span">.........</div>
-            <p className="description">{description}</p>
-            <ul className="icons">
-                <li><Icon icon="la:facebook" /></li>
-                <li><Icon icon="jam:twitter-circle" /></li>
-                <li><Icon icon="entypo-social:instagram-with-circle" /></li>
-            </ul>
-        </article> 
-    )
-}
+  const { name, image, description, id } = props.helicopter;
+  return (
+    <Link to={`/${id}`}>
+      <article className="chopper">
+        <div className="image">
+          <img src={image} alt={name} />
+        </div>
+        <h2 className="name">{name}</h2>
+        <div className="span">.........</div>
+        <p className="description">{description}</p>
+        <ul className="icons">
+          <li>
+            <Icon icon="la:facebook" />
+          </li>
+          <li>
+            <Icon icon="jam:twitter-circle" />
+          </li>
+          <li>
+            <Icon icon="entypo-social:instagram-with-circle" />
+          </li>
+        </ul>
+      </article>
+    </Link>
+  );
+};
 
 Helicopter.propTypes = {
-    helicopter: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-    }).isRequired,
+  helicopter: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default HelicopterList;
