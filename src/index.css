@@ -1,10 +1,15 @@
+
 @import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 .home,
@@ -15,4 +20,110 @@
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+
+img {
+  width: 10rem;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.choppers {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0 6rem;
+}
+
+.span {
+  font-size: x-large;
+  color: darkgray;
+}
+
+.chopper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  width: 16rem;
+  text-align: center;
+  font-size: small;
+  color: hsl(240deg 3.25% 77.22%);
+}
+
+.description-1 {
+  text-align: center;
+  font-size: small;
+  color: hsl(240deg 3.25% 77.22%);
+  font-weight: 400;
+}
+
+.icons {
+  display: flex;
+  font-size: 1.5rem;
+  color: hsl(240deg 3.25% 77.22%);
+  padding: 7% 0;
+  gap: 7%;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  border-radius: 50%;
+  border: 10px solid white;
+  height: 200px;
+  width: 200px;
+}
+
+.latest-models {
+  color: #121212;
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.name {
+  color: #121212;
+  font-weight: bold;
+}
+
+.back {
+  position: absolute;
+  left: 0;
+  background: #efefef;
+  font-size: large;
+  padding: 13px;
+  color: white;
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
+  width: 8%;
+}
+
+.next {
+  position: absolute;
+  right: 0;
+  background: #96be0d;
+  font-size: large;
+  padding: 13px;
+  color: white;
+  width: 8%;
+  border-bottom-left-radius: 23px;
+  border-top-left-radius: 23px;
+  padding-left: 22px;
 }
