@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import helicopterReducer from './features/helicopters/helicopterSlice';
+import helicopterReducer from "./features/helicopters/helicopterSlice";
 import paginationReducer from "./features/pagination/paginationSlice";
 import addItemReducer from "./features/addItem/addItemSlice";
 
