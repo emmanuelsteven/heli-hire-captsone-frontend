@@ -49,14 +49,16 @@ const Login = () => {
       navigate('/helicopters');
     }
   }, [userData.message,
-    userData.loggedIn, navigate, dispatch, userData, clickedState]);
+    userData.loggedIn, navigate, dispatch, userData, clickedState, usernameState]);
 
   return (
-    <div className="form-main-container">
-      <div className="background-overlay">
-        <h2 className="form-title">Login</h2>
-        <form className="form-container">
-          <div className="name-input-msg-container">
+    <div className="signup-page">
+      <div className="background-cover">
+        <div className='register'>
+
+        <h2 className="signup-title">Login</h2>
+        <form className="form-page">
+          <div>
             <input
               type="text"
               id="name"
@@ -85,7 +87,7 @@ const Login = () => {
           <button
             type="button"
             name="login"
-            className="login-btn"
+            className="btn"
             onClick={userDispatch}
           >
             Log In
@@ -97,6 +99,7 @@ const Login = () => {
             </Link>
           </div>
         </form>
+        </div>
       </div>
     </div>
   );

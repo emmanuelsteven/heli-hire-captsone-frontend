@@ -66,18 +66,20 @@ const Register = () => {
     dispatch,
     userData,
     clickedState,
+    usernameState
   ]);
 
   return (
-    <div className="container">
-      <div className="backgrd-overlay">
-        <h2 className="card-title">Register</h2>
-        <form action="" className="user-form flex">
+    <div className="signup-page">
+      <div className="background-cover">
+        <div className='register'>
+        <h2 className="signup-title">Register</h2>
+        <form action="" className="form-page">
           <input
             type="input"
-            name="username"
-            placeholder="Username"
-            id="username"
+            name="name"
+            placeholder="name"
+            id="name"
             onChange={setUserName}
           />
           <div
@@ -106,6 +108,7 @@ const Register = () => {
             </Link>
           </p>
         </form>
+        </div>
       </div>
     </div>
   );
