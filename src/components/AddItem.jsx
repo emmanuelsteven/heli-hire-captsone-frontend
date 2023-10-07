@@ -38,11 +38,12 @@ const AddItem = () => {
 
   return (
     <section className="item-page">
-      <div className="background-cover">
-        <form className="form-page" onSubmit={handleFormSubmission}>
-          <h2 className="item-form">Add New Helicopter</h2>
+      <div className="background-cover-pic">
+        <form className="additem-form-page" onSubmit={handleFormSubmission}>
+          <h2 className="item-form-title">Add New Helicopter</h2>
           <div>
             <input
+             className="additem-form-input"
               placeholder="Helicopter name"
               type="text"
               name="name"
@@ -52,6 +53,7 @@ const AddItem = () => {
           </div>
           <div>
             <input
+            className="additem-form-input"
               placeholder="contact email"
               type="text"
               name="contact"
@@ -61,6 +63,7 @@ const AddItem = () => {
           </div>
           <div>
             <input
+            className="additem-form-input"
               placeholder="price/hr"
               type="number"
               name="price"
@@ -70,6 +73,7 @@ const AddItem = () => {
           </div>
           <div>
             <input
+            className="additem-form-input"
               placeholder="carriage capacity"
               type="number"
               name="carriage_capacity"
@@ -79,6 +83,7 @@ const AddItem = () => {
           </div>
           <div>
             <input
+            className="additem-form-input"
               placeholder="image url"
               type="text"
               name="image"
@@ -88,6 +93,7 @@ const AddItem = () => {
           </div>
           <div>
             <input
+            className="additem-form-input"
               placeholder="model number"
               type="number"
               name="model"
