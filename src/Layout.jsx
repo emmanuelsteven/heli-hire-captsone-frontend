@@ -7,14 +7,18 @@ import AddItem from "./components/AddItem";
 import { Icon } from "@iconify/react";
 
 import { Layout, Space, Typography } from 'antd';
+import { useState } from "react";
 const { Content, Footer, Sider } = Layout;
 
 const LayoutComponent = () => {
+  const [sideWidth, setSidWidth] = useState('200px');
   return (
     <Layout
       style={{
         minHeight: '100vh',
         width: '100vw',
+        overflowY: 'clip',
+        position: 'relative',
       }}
     >
       <Sider
@@ -26,10 +30,12 @@ const LayoutComponent = () => {
         }}
 
         onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
+          setSidWidth(collapsed ? '0px' : '200px');
+          console.log(collapsed, type, sideWidth);
         }}
         style={{
           paddingBlock: '20px',
+          zIndex: '999',
         }}
       >
         <Space className="demo-logo-vertical">
@@ -54,9 +60,9 @@ const LayoutComponent = () => {
 
       </Sider>
       <Layout style={{minHeight: '100%'}}>
-        <Content style={{ margin: '80px 0' }} >          
+        <Content style={{ margin: '0', width: `calc(100% - ${sideWidth})`, overflowY: 'scroll', overflowX: 'clip' }} >          
           <Routes>
-            <Route path="/addItem" element={<AddItem />} />
+            <Route path="/new-helicopter" element={<AddItem />} />
             <Route path="/" element={<HelicopterList />} />
             <Route path="/helicopters/:id" element={<Details />} />
             <Route path="/reservations" element={<HelicopterList />} />
@@ -66,9 +72,8 @@ const LayoutComponent = () => {
         <Footer
           style={{
             textAlign: 'center',
-            position: 'fixed',
-            marginInline: 'auto',
-            bottom: 0,
+            position: 'absolute',
+            bottom: '0',
           }}
         >
           Heli Hire ©2023 Created by Full Stack Capstone Team 
