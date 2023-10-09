@@ -53,7 +53,7 @@ const HelicopterList = () => {
 const Helicopter = (props) => {
   const { name, image, description, id } = props.helicopter;
   return (
-    <Link to={`/${id}`}>
+    <Link to={`/helicopters/${id}`}>
       <article className="chopper">
         <div className="image">
           <img src={image} alt={name} />
