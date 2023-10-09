@@ -3,7 +3,7 @@ import HelicopterList from "./components/Helicopter";
 import Details from "./pages/Details";
 import DeleteComponent from './components/Delete';
 import MenuComponent from "./components/Menu";
-// import AddItem from "./components/AddItem";
+import AddItem from "./components/AddItem";
 import { Icon } from "@iconify/react";
 
 import { Layout, Space, Typography } from 'antd';
@@ -56,7 +56,7 @@ const LayoutComponent = () => {
       <Layout style={{minHeight: '100%'}}>
         <Content style={{ margin: '80px 0' }} >          
           <Routes>
-            {/* <Route path="/addItem" element={<AddItem />} /> */}
+            <Route path="/addItem" element={<AddItem />} />
             <Route path="/" element={<HelicopterList />} />
             <Route path="/helicopters/:id" element={<Details />} />
             <Route path="/reservations" element={<HelicopterList />} />
