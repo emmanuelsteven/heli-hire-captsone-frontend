@@ -58,6 +58,18 @@ const LayoutComponent = () => {
           </li>
         </ul>
 
+        <Footer
+          style={{
+            textAlign: 'center',
+            position: 'absolute',
+            bottom: '0',
+            width: '100%',
+            background: 'none',
+            backdropFilter: 'blur(10px)',
+          }}
+        >
+          <small>Heli Hire ©2023 Created by Full Stack Capstone Team</small> 
+        </Footer>
       </Sider>
       <Layout style={{minHeight: '100%'}}>
         <Content style={{ margin: '0', width: `calc(100% - ${sideWidth})`, overflowY: 'scroll', overflowX: 'clip' }} >          
@@ -69,15 +81,6 @@ const LayoutComponent = () => {
             <Route path="/delete" element={<DeleteComponent />} />
           </Routes>
         </Content>
-        <Footer
-          style={{
-            textAlign: 'center',
-            position: 'absolute',
-            bottom: '0',
-          }}
-        >
-          Heli Hire ©2023 Created by Full Stack Capstone Team 
-        </Footer>
       </Layout>
     </Layout>
   );
