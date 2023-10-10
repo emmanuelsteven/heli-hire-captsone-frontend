@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../features/addItem/addItemSlice";
+import { useNavigate } from "react-router";
 
 const AddItem = () => {
     const [formData, setFormData] = useState({
@@ -12,7 +13,8 @@ const AddItem = () => {
         model: '',
         description: '',
     });
-
+  
+    const navigate = useNavigate();
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.item)
 
@@ -24,6 +26,7 @@ const AddItem = () => {
   const handleFormSubmission = async (event) => {
     event.preventDefault();
     await dispatch(addItem(formData));
+    navigate('/');
     // console.log(formData);
     setFormData({
         name: '',

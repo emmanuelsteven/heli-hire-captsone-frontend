@@ -118,6 +118,19 @@ img {
   padding-left: 22px;
 }
 
+.signup-page {
+  background-image: url(./assets/images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
 .item-page {
   width: 100%;
   justify-content: center;
@@ -129,6 +142,20 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
+}
+
+.form-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.background-cover {
+  background-color: hsl(42.35deg 100% 50%);
+  height: 100vh;
+  width: 100%;
+  filter: opacity(0.9);
 }
 
 .additem-form-page {
@@ -156,6 +183,12 @@ img {
   background: white;
 }
 
+input {
+  border: 2px solid darkgray;
+  padding: 3px;
+  border-radius: 5px;
+}
+
 .additem-form-input {
   border: 2px solid darkgray;
   padding: 2px 10px;
@@ -178,11 +211,23 @@ img {
   font-weight: 900;
 }
 
+.signup-title {
+  margin-bottom: 1rem;
+  color: hsla(0, 0%, 13%, 1);
+}
+
 .item-form-title {
   margin-bottom: 1rem;
   color: hsla(0, 0%, 100%, 1);
   font-weight: bold;
   font-size: 1.5rem;
+}
+
+.logout {
+  background: #96be0d;
+  color: white;
+  padding: 1px 10px;
+  border-radius: 11px;
 }
 
 .submit-btn {
