@@ -1,17 +1,27 @@
 import { Route, Routes } from "react-router-dom";
 import HelicopterList from "./components/Helicopter";
 import Details from "./pages/Details";
-import DeleteComponent from './components/Delete';
 import MenuComponent from "./components/Menu";
 import AddItem from "./components/AddItem";
 import { Icon } from "@iconify/react";
 
 import { Layout, Space, Typography } from 'antd';
 import { useState } from "react";
+import DeleteHelicopterComponent from "./components/DeleteHelicopter";
 const { Content, Footer, Sider } = Layout;
 
 const LayoutComponent = () => {
   const [sideWidth, setSidWidth] = useState('200px');
+  const footerStyle = sideWidth !== '0px' ? {
+    textAlign: 'center',
+    position: 'absolute',
+    bottom: '0',
+    width: '100%',
+    background: 'none',
+    backdropFilter: 'blur(10px)',
+    paddingBlock: '0',
+  }: {display: 'none'};
+  
   return (
     <Layout
       style={{
@@ -59,14 +69,7 @@ const LayoutComponent = () => {
         </ul>
 
         <Footer
-          style={{
-            textAlign: 'center',
-            position: 'absolute',
-            bottom: '0',
-            width: '100%',
-            background: 'none',
-            backdropFilter: 'blur(10px)',
-          }}
+          style={footerStyle}
         >
           <small>Heli Hire ©2023 Created by Full Stack Capstone Team</small> 
         </Footer>
@@ -74,11 +77,12 @@ const LayoutComponent = () => {
       <Layout style={{minHeight: '100%'}}>
         <Content style={{ margin: '0', width: `calc(100% - ${sideWidth})`, overflowY: 'scroll', overflowX: 'clip' }} >          
           <Routes>
-            <Route path="/new-helicopter" element={<AddItem />} />
             <Route path="/" element={<HelicopterList />} />
             <Route path="/helicopters/:id" element={<Details />} />
             <Route path="/reservations" element={<HelicopterList />} />
-            <Route path="/delete" element={<DeleteComponent />} />
+            <Route path="/new-helicopter" element={<AddItem />} />
+            <Route path="/delete-helicopter" element={<DeleteHelicopterComponent />} />
+            <Route path="/delete-reservation" element={<DeleteHelicopterComponent />} />
           </Routes>
         </Content>
       </Layout>
