@@ -1,26 +1,15 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
 import { Icon } from '@iconify/react';
 import PropTypes from 'prop-types';
 import { nextPage, prevPage,  } from "../features/pagination/paginationSlice";
-import { logOut } from "../features/sessions/sessionsSlice";
 import { Link } from "react-router-dom";
 
 const HelicopterList = () => {
-    const isLoggedIn = useSelector((state) => state.sessions.loggedIn);
     const { helicopter } = useSelector((state) => state.helicopter);
     const { currentPage, itemsPerPage } = useSelector((state) => state.pagination);
     const dispatch = useDispatch();
-    const navigate = useNavigate();
-
-    const logOutUser = () => {
-        sessionStorage.clear();
-        localStorage.clear()
-        dispatch(logOut());
-        navigate('/');
-    }
 
   useEffect(() => {
     dispatch(fetchHelicopters());
@@ -52,15 +41,6 @@ const HelicopterList = () => {
             <button className="next" onClick={() => dispatch(nextPage())} disabled={isNextDisabled}>
                 <Icon icon="grommet-icons:caret-next" />
             </button>
-            {isLoggedIn && (
-            <button
-              className="logout"
-              type="button"
-              onClick={logOutUser}
-            >
-              Logout
-            </button>
-          )}
         </section>
      )
 }
@@ -68,7 +48,7 @@ const HelicopterList = () => {
 const Helicopter = (props) => {
   const { name, image, description, id } = props.helicopter;
   return (
-    <Link to={`/${id}`}>
+    <Link to={`/helicopters/${id}`}>
       <article className="chopper">
         <div className="image">
           <img src={image} alt={name} />

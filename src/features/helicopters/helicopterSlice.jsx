@@ -11,6 +11,21 @@ const fetchHelicopters = createAsyncThunk(
   }
 );
 
+// delete helicopter fetch here
+export const deleteHelicopter = createAsyncThunk('helicopter/deleteHelicopter', async (id) => {
+  const response = await fetch(`${url}/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      id,
+    })
+  });
+  const data = await response.json();
+  console.log(data);
+});
+
 const initialState = {
   helicopter: [],
 };
