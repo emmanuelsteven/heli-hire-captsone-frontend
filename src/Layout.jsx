@@ -66,7 +66,7 @@ const LayoutComponent = ({ children }) => {
         </Footer>
       </Sider>
       <Layout style={{minHeight: '100%'}}>
-        <Content style={{ margin: '0', width: `calc(100% - ${sideWidth})`, overflowY: 'scroll', overflowX: 'clip' }} >          
+        <Content style={{ margin: '0', width: '100%', overflowY: 'scroll', overflowX: 'clip' }} >          
           {children}
         </Content>
       </Layout>

@@ -7,26 +7,52 @@
   justify-content: center;
 }
 
-table {
-  width: 100%;
-}
-
-table,
-th,
-td {
-  border: 2px solid #96bf0fe1;
+/* Default styles for mobile */
+.reservations-table {
   border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+  font-size: 16px; /* Base font size for mobile */
 }
 
-th,
-td {
-  padding: 5px;
+.reservations-table thead {
+  background-color: #f0f0f0;
+}
+
+.reservations-table th,
+.reservations-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #333;
+}
+
+.reservations-table td:last-child {
+  color: white;
+  background-color: #007bff;
+  padding: 6px 12px;
+  border-radius: 4px;
   text-align: center;
 }
 
-th {
-  font-weight: 700;
+/* Hover effect for table rows */
+.reservations-table tbody tr:hover {
+  background-color: #f5f5f5;
 }
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 768px) {
+  .reservations-table {
+    font-size: 18px; /* Increase font size for larger screens */
+  }
+}
+
+/* Additional styles for larger screens */
+@media (min-width: 1024px) {
+  .reservations-table {
+    /* Add styles for even larger screens if needed */
+  }
+}
+
 
 .reservations-container {
   width: 100%;
@@ -64,7 +90,10 @@ th {
   .reservations-main-container {
     width: 100%;
 
-  
+    /* display: grid; */
+
+    /* flex-direction: row; */
+    grid-template-columns: 15vw 85vw;
   }
 
   .reservations-list-container {
@@ -90,25 +119,5 @@ th {
     font-size: 12px;
   }
 
-  table,
-  th,
-  td {
-    border: 2px solid #96bf0fe1;
-    border-collapse: collapse;
-  }
-
-  th,
-  td {
-    padding: 10px;
-    text-align: center;
-  }
-
-  td {
-    font-size: 18px;
-  }
-
-  th {
-    font-weight: 700;
-    font-size: 22px;
-  }
+  
 }
