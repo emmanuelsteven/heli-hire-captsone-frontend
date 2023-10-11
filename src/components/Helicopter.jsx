@@ -4,15 +4,20 @@ import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
 import { Icon } from '@iconify/react';
 import PropTypes from 'prop-types';
 import { nextPage, prevPage,  } from "../features/pagination/paginationSlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import LayoutComponent from "../Layout";
 
 const HelicopterList = () => {
     const { helicopter } = useSelector((state) => state.helicopter);
     const { currentPage, itemsPerPage } = useSelector((state) => state.pagination);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchHelicopters());
+    if (!window.localStorage.getItem('logged_in')) {
+      navigate('/login');
+    }
   }, [dispatch]);
 
   const indexOfLastHelicopter = currentPage * itemsPerPage;
@@ -24,7 +29,8 @@ const HelicopterList = () => {
 
   const currentHelicopters = helicopter.slice(startIndex, endIndex);
 
-     return (
+    return (
+      <LayoutComponent>
         <section className="home-page">
             <h1 className="latest-models">LATEST MODELS</h1>
             <p className="description-1">Please select a chopper to hire</p>
@@ -42,7 +48,8 @@ const HelicopterList = () => {
                 <Icon icon="grommet-icons:caret-next" />
             </button>
         </section>
-     )
+      </LayoutComponent>
+    )
 }
 
 const Helicopter = (props) => {

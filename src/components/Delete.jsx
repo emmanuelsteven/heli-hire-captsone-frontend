@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHelicopters, deleteHelicopter } from "../features/helicopters/helicopterSlice";
+import LayoutComponent from "../Layout";
+import { useNavigate } from "react-router";
 
 const DeleteComponent = () => {
     const dispatch = useDispatch();
     const helicopters = useSelector((state) => state.helicopter);
+    const navigate = useNavigate();
     console.log(helicopters);
     const handleDelete = (e) => {
         //display the id of the helicopter to be deleted
@@ -15,9 +18,12 @@ const DeleteComponent = () => {
     };
     useEffect(() => {
         dispatch(fetchHelicopters());
+        if (!window.localStorage.getItem('logged_in')) {
+          navigate('/login');
+        }
     }, [dispatch]);
     return (
-      <>
+      <LayoutComponent>
         <h1>This is the delete page</h1>
         <ul>
           {helicopters.helicopter.map((helicopter) => {
@@ -34,7 +40,7 @@ const DeleteComponent = () => {
             );
           })}
         </ul>
-      </>
+      </LayoutComponent>
     );
 }
  

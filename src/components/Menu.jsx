@@ -1,10 +1,20 @@
 import { GroupOutlined, BarsOutlined, DeleteOutlined, EditOutlined, DiffOutlined } from '@ant-design/icons';
 import { Menu } from 'antd';
-import { Link, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { logOut } from '../features/sessions/sessionsSlice';
 
 const MenuComponent = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const logOutUser = () => {
+    sessionStorage.clear();
+    localStorage.clear()
+    dispatch(logOut());
+    navigate('/');
+  }
     const location = useLocation();
-    let seletedKey = '1';
+    let seletedKey = '';
     switch (location.pathname) {
         case '/helicopters':
           seletedKey = '1';
@@ -22,7 +32,7 @@ const MenuComponent = () => {
             seletedKey = '5';
             break;
         default:
-            seletedKey = '1';
+            seletedKey = '';
             break;   
     }
     return (
@@ -35,7 +45,7 @@ const MenuComponent = () => {
               {
                 key: 1,
                 icon: <GroupOutlined />,
-                label: <Link to="/">Helicopters</Link>,
+                label: <Link to="/helicopters">Helicopters</Link>,
               },
               {
                 key: 2,
@@ -56,6 +66,16 @@ const MenuComponent = () => {
                 key: 5,
                 icon: <DeleteOutlined />,
                 label: <Link to={'/delete'}>Delete</Link>,
+              },
+              {
+                key: 6,
+                label: <button
+                className="logout"
+                type="button"
+                onClick={logOutUser}
+              >
+                Logout
+              </button>,
               },
             ]
          }

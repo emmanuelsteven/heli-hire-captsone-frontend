@@ -6,17 +6,21 @@ import { FaAngleLeft } from "react-icons/fa";
 import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
 import { useNavigate, useParams } from "react-router-dom";
 import "../assets/styles/details.css";
+import LayoutComponent from "../Layout";
 
 const Details = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   useEffect(() => {
     dispatch(fetchHelicopters());
+    if (!window.localStorage.getItem('logged_in')) {
+      navigate('/login');
+    }
   }, [dispatch]);
   const { helicopter } = useSelector((state) => state.helicopter);
   const { id } = useParams();
   const selectHelicopter = helicopter.find((item) => item.id === Number(id));
-  console.log(selectHelicopter);
+  
   if (!selectHelicopter) {
     return <div>Loading...</div>; // or handle the absence of data differently
   }
@@ -24,9 +28,8 @@ const Details = () => {
   const handlePreviousPage = () => {
     navigate("/");
   };
-
   return (
-    <>
+    <LayoutComponent>
       {" "}
       <h1 className="det-title">Helicopter Details </h1>
       <main>
@@ -70,7 +73,7 @@ const Details = () => {
           <button className="res-btn">Reserve</button>
         </div>
       </main>
-    </>
+    </LayoutComponent>
   );
 };
 

@@ -1,5 +1,25 @@
-import LayoutComponent from "./Layout";
+import { Route, Routes } from "react-router-dom";
+import HelicopterList from "./components/Helicopter";
+import Details from "./pages/Details";
+import DeleteComponent from './components/Delete';
+import AddItem from "./components/AddItem";
+import Login from "./components/sessions/login";
+import Register from "./components/sessions/signup";
 
-const App = () => <LayoutComponent />
+
+const App = () => {
+    return (
+        <Routes>
+            <Route path="/" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/new-helicopter" element={<AddItem />} />
+            <Route path="/helicopters" element={<HelicopterList />} />
+            <Route path="/helicopters/:id" element={<Details />} />
+            <Route path="/reservations" element={<HelicopterList />} />
+            <Route path="/new-reservation" element={<HelicopterList />} />
+            <Route path="/delete" element={<DeleteComponent />} />
+        </Routes>
+    );
+}
 
 export default App;

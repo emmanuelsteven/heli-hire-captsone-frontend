@@ -1,29 +1,10 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
-import HelicopterList from "./components/Helicopter";
-import Details from "./pages/Details";
-import DeleteComponent from './components/Delete';
 import MenuComponent from "./components/Menu";
-import AddItem from "./components/AddItem";
 import { Icon } from "@iconify/react";
-import Login from "./components/sessions/login";
-import Register from "./components/sessions/signup";
 import { Layout, Space, Typography } from 'antd';
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { logOut } from "./features/sessions/sessionsSlice";
 const { Content, Footer, Sider } = Layout;
 
-const LayoutComponent = () => {
-  const isLoggedIn = useSelector((state) => state.sessions.loggedIn);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  const logOutUser = () => {
-    sessionStorage.clear();
-    localStorage.clear()
-    dispatch(logOut());
-    navigate('/');
-}
+const LayoutComponent = ({ children }) => {
 
   const [sideWidth, setSidWidth] = useState('200px');
   return (
@@ -58,17 +39,6 @@ const LayoutComponent = () => {
           </Typography.Title>
         </Space>
         <MenuComponent />
-        {/* // add social media icons to the bottom of sider */}
-
-           {isLoggedIn && (
-            <button
-              className="logout"
-              type="button"
-              onClick={logOutUser}
-            >
-              Logout
-            </button>
-          )}
 
         <ul className="icons mx-auto relative top-[13rem]">
           <li>
@@ -97,15 +67,7 @@ const LayoutComponent = () => {
       </Sider>
       <Layout style={{minHeight: '100%'}}>
         <Content style={{ margin: '0', width: `calc(100% - ${sideWidth})`, overflowY: 'scroll', overflowX: 'clip' }} >          
-          <Routes>
-          <Route path="/" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/new-helicopter" element={<AddItem />} />
-            <Route path="/helicopters" element={<HelicopterList />} />
-            <Route path="/helicopters/:id" element={<Details />} />
-            <Route path="/reservations" element={<HelicopterList />} />
-            <Route path="/delete" element={<DeleteComponent />} />
-          </Routes>
+          {children}
         </Content>
       </Layout>
     </Layout>
