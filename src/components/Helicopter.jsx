@@ -4,6 +4,9 @@ import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
 import { Icon } from '@iconify/react';
 import PropTypes from 'prop-types';
 import { nextPage, prevPage,  } from "../features/pagination/paginationSlice";
+import Navbar from "./navbar";
+import '../stylesheets/motorcycles.css';
+
 
 const HelicopterList = () => {
     const { helicopter } = useSelector((state) => state.helicopter);
@@ -25,26 +28,34 @@ const HelicopterList = () => {
     const currentHelicopters = helicopter.slice(startIndex, endIndex);
 
 
-     return (
-        <section className="home-page">
-            <h1 className="latest-models">LATEST MODELS</h1>
-            <p className="description-1">Please select a chopper to hire</p>
-            <div className="span">...............</div>
-            <button className="back" onClick={() => dispatch(prevPage())}>
-                <Icon icon="grommet-icons:caret-next" rotate={2} />
-            </button>
-            <div className="choppers">
-                {currentHelicopters.map((helicopter) => {
+    return (
+        <div className="motorcycles-main-container">
+       
+            <section className="details-nav-container">
+                 <Navbar />
+            </section>
+     
+       
+            <section className="home-page">
+                <h1 className="latest-models">LATEST MODELS</h1>
+                 <p className="description-1">Please select a chopper to hire</p>
+                <div className="span">...............</div>
+                <button className="back" onClick={() => dispatch(prevPage())}>
+                    <Icon icon="grommet-icons:caret-next" rotate={2} />
+                </button>
+                <div className="choppers">
+                    {currentHelicopters.map((helicopter) => {
                     const { id } = helicopter
                     return <Helicopter helicopter={helicopter} key={id} />
-            })}
-            </div>
-            <button className="next" onClick={() => dispatch(nextPage())} disabled={isNextDisabled}>
-                <Icon icon="grommet-icons:caret-next" />
-            </button>
-        </section>
-     )
-}
+                    })}
+                </div>
+                <button className="next" onClick={() => dispatch(nextPage())} disabled={isNextDisabled}>
+                    <Icon icon="grommet-icons:caret-next" />
+                </button>
+            </section>
+        </div>
+    )
+};
 
 const Helicopter = (props) => {
     const { name, image, description } = props.helicopter;

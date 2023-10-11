@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 * {
   margin: 0;
@@ -91,8 +89,10 @@ img {
 }
 
 .back {
-  position: absolute;
-  left: 0;
+  position: fixed;
+  left: 15.8rem;
+  border: none;
+  top: 30rem;
   background: #efefef;
   font-size: large;
   padding: 13px;
@@ -103,7 +103,7 @@ img {
 }
 
 .next {
-  position: absolute;
+  position: fixed;
   right: 0;
   background: #96be0d;
   font-size: large;
@@ -114,3 +114,6 @@ img {
   border-top-left-radius: 23px;
   padding-left: 22px;
 }
+
+  
+ 
