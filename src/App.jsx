@@ -17,7 +17,6 @@ const App = () => {
             <Route path="/new-helicopter" element={<AddItem />} />
             <Route path="/helicopters" element={<HelicopterList />} />
             <Route path="/helicopters/:id" element={<Details />} />
-            <Route path="/reservations" element={<HelicopterList />} />
             <Route path="/new-reservation" element={<Reserve />} />
             <Route path="/reservations" element={<Reservations />} />
             <Route path="/delete" element={<DeleteComponent />} />

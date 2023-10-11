@@ -5,6 +5,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { getReservations } from '../features/reservations/reservationSlice';
 import { fetchHelicopters } from '../features/helicopters/helicopterSlice';
 import '../stylesheets/reservations.css';
+import LayoutComponent from "../Layout";
 
 const Reservations = () => {
   const isLoggedIn = JSON.parse(window.localStorage.getItem('logged_in'));
@@ -39,6 +40,7 @@ const Reservations = () => {
   const sortedReservations = userReservations.slice().sort(sortReservations);
 
   return (
+    <LayoutComponent>
     <div className="reservations-main-container">
       <div className="reservations-container">
         {isLoggedIn ? (
@@ -111,7 +113,9 @@ const Reservations = () => {
         )}
       </div>
     </div>
+    </LayoutComponent>
   );
+ 
 };
 
 export default Reservations;

@@ -4,6 +4,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { postReservation, createMsgAction } from "../features/reservations/reservationSlice"
 import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
 import "../stylesheets/reserve.css";
+import LayoutComponent from "../Layout";
+import Layout from 'antd/es/layout/layout';
 
 const Reserve = () => {
   const helicopters = useSelector((state) => state.helicopter.helicopter);
@@ -117,7 +119,8 @@ const Reserve = () => {
 
           const getCurrentDate = () => new Date().toJSON().slice(0, 10);
 
-          return (
+          return ( 
+            <LayoutComponent>
             <section className="reserve-helicopter-page">
                <section className="reserve-nav-container">
       </section>
@@ -190,6 +193,7 @@ Get a personalized itinerary just for you, guided by heli traveler tips and revi
         </div>
       </div>
     </section>
+    </LayoutComponent>    
   );
 };
 
