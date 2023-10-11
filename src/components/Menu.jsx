@@ -65,7 +65,17 @@ const MenuComponent = () => {
               {
                 key: 5,
                 icon: <DeleteOutlined />,
-                label: <Link to={'/delete'}>Delete</Link>,
+                label: 'Delete',
+                children: [
+                  {
+                    key: 6,
+                    label: <Link to={'/delete-helicopter'}>Delete Helicopter</Link>,
+                  },
+                  {
+                    key: 7,
+                    label: <Link to={'/delete-reservation'}>Delete Reservation</Link>,
+                  },
+                ],
               },
               {
                 key: 6,
