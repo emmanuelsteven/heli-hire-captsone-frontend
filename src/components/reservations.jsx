@@ -5,7 +5,6 @@ import { useNavigate, Link } from 'react-router-dom';
 import { getReservations } from '../features/reservations/reservationSlice';
 import { fetchHelicopters } from '../features/helicopters/helicopterSlice';
 import '../stylesheets/reservations.css';
-import Navbar from './navbar';
 
 const Reservations = () => {
   const isLoggedIn = JSON.parse(window.localStorage.getItem('logged_in'));
@@ -41,7 +40,6 @@ const Reservations = () => {
 
   return (
     <div className="reservations-main-container">
-          <Navbar />
       <div className="reservations-container">
         {isLoggedIn ? (
           <div className="reservations-list-container">

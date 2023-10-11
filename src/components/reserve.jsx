@@ -4,7 +4,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { postReservation, createMsgAction } from "../features/reservations/reservationSlice"
 import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
 import "../stylesheets/reserve.css";
-import Navbar from "./navbar";
 
 const Reserve = () => {
   const helicopters = useSelector((state) => state.helicopter.helicopter);
@@ -121,7 +120,6 @@ const Reserve = () => {
           return (
             <section className="reserve-helicopter-page">
                <section className="reserve-nav-container">
-        <Navbar />
       </section>
               <div className="reserve-main-container">
                 
