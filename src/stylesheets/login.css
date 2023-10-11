@@ -1,0 +1,15 @@
+.register-link {
+  text-decoration: none;
+  font-weight: 500;
+  color: #97bf0f;
+}
+
+.login-note {
+  color: hsla(0, 0%, 13%, 1);
+  margin-right: 0.5em;
+}
+
+.error > p {
+  color: red;
+  margin: 0.2em;
+}
