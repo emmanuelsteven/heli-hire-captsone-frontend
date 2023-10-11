@@ -2,6 +2,7 @@ import MenuComponent from "./components/Menu";
 import { Icon } from "@iconify/react";
 import { Layout, Space, Typography } from 'antd';
 import { useState } from "react";
+import PropTypes from 'prop-types';
 const { Content, Footer, Sider } = Layout;
 
 const LayoutComponent = ({ children }) => {
@@ -53,7 +54,7 @@ const LayoutComponent = ({ children }) => {
         </ul>
 
         <Footer
-          style={{
+          style={sideWidth === '0px' ? {display: 'none'} : { 
             textAlign: 'center',
             position: 'absolute',
             bottom: '0',
@@ -73,4 +74,9 @@ const LayoutComponent = ({ children }) => {
     </Layout>
   );
 };
+
+LayoutComponent.propTypes = {
+  children: PropTypes.node,
+};
+
 export default LayoutComponent;
