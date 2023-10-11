@@ -5,6 +5,8 @@ import DeleteComponent from './components/Delete';
 import MenuComponent from "./components/Menu";
 import AddItem from "./components/AddItem";
 import { Icon } from "@iconify/react";
+import Reservations from "./components/reservations";
+import Reserve from "./components/reserve";
 
 import { Layout, Space, Typography } from 'antd';
 import { useState } from "react";
@@ -65,7 +67,8 @@ const LayoutComponent = () => {
             <Route path="/new-helicopter" element={<AddItem />} />
             <Route path="/" element={<HelicopterList />} />
             <Route path="/helicopters/:id" element={<Details />} />
-            <Route path="/reservations" element={<HelicopterList />} />
+            <Route path="/reservations" element={<Reservations />} />
+            <Route path="/new-reservation" element={<Reserve />} />
             <Route path="/delete" element={<DeleteComponent />} />
           </Routes>
         </Content>
