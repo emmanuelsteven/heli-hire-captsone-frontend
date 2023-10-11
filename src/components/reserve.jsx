@@ -1,16 +1,15 @@
 import { useSelector, useDispatch } from "react-redux";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { postReservation, createMsgAction } from "../features/reservations/reservationSlice"
 import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
 import "../stylesheets/reserve.css";
 import LayoutComponent from "../Layout";
-import Layout from 'antd/es/layout/layout';
 
 const Reserve = () => {
   const helicopters = useSelector((state) => state.helicopter.helicopter);
   const createmsg = useSelector ((state) => state.sessions);
-  const reservationData = useSelector ((state) => state.reservations);
+  // const reservationData = useSelector ((state) => state.reservations);
   const user = JSON.parse(window.localStorage.getItem('userId'));
   const isLoggedIn = JSON.parse(window.localStorage.getItem('logged_in'));
 
