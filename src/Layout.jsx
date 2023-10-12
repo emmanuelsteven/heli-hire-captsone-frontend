@@ -59,7 +59,7 @@ const LayoutComponent = ({ children }) => {
         </Footer>
       </Sider>
       <Layout>
-        <Content className="m-0 w-full md:w-[calc(100%-200px)] ">          
+        <Content className="m-0 w-full md:w-[calc(100%-200px)] overflow-clip">          
           {children}
         </Content>
       </Layout>
@@ -69,11 +69,6 @@ const LayoutComponent = ({ children }) => {
 
 LayoutComponent.propTypes = {
   children: PropTypes.node,
-};
-
-
-LayoutComponent.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default LayoutComponent;
