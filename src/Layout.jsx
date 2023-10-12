@@ -60,7 +60,7 @@ const LayoutComponent = ({ children }) => {
         </Footer>
       </Sider>
       <Layout>
-        <Content className="m-0 w-full md:w-[calc(100%-200px)] overflow-clip">          
+        <Content className="m-0 w-full md:w-[calc(100%-200px)] ">          
           {children}
         </Content>
       </Layout>
