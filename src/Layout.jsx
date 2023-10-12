@@ -12,7 +12,7 @@ const LayoutComponent = ({ children }) => {
   return (
     <Layout
       style={{
-        minHeight: '100vh',
+        height: '100vh',
         width: '100vw',
         display: 'flex',
         overflowY: 'clip',
@@ -59,7 +59,7 @@ const LayoutComponent = ({ children }) => {
         </Footer>
       </Sider>
       <Layout>
-        <Content className="m-0 w-full md:w-[calc(100%-200px)] overflow-clip">          
+        <Content className="m-0 w-full h-[100vh] md:w-[calc(100%-200px)] overflow-clip">          
           {children}
         </Content>
       </Layout>
