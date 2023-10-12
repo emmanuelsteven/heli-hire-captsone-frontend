@@ -125,17 +125,17 @@ $ npm test
 
 👤 **Emmanueul Steven**
 
-- GitHub: [@JacintaNgwu](https://github.com/emmanuelsteven)
-- LinkedIn: [jacinta_ngwu](https://www.linkedin.com/in/steven-emmanuel-75a03a141/)
+- GitHub: [@emmanuelsteven](https://github.com/emmanuelsteven)
+- LinkedIn: [emmanuelsteven](https://www.linkedin.com/in/steven-emmanuel-75a03a141/)
 
 👤 **Bisaso Ronald**
 
-- GitHub: [@githubhaliljon](https://github.com/bronnie313)
+- GitHub: [@bronnie313](https://github.com/bronnie313)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/ronnie-bisaso-758017120/)
 
 👤 **Tetteh Kodjo-Sarso**
 
-- GitHub: [@utsargo](https://github.com/Reggeditt)
+- GitHub: [@Reggeditt](https://github.com/Reggeditt)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/tksarso)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -176,6 +176,6 @@ I would like to thank:
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE) licensed.
+This project is [MIT[](./LICENSE)] licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
