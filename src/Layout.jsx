@@ -1,12 +1,14 @@
+import PropTypes from 'prop-types';
 import MenuComponent from "./components/Menu";
 import { Icon } from "@iconify/react";
 import { Layout, Space, Typography } from 'antd';
 import { useState } from "react";
+
 const { Content, Footer, Sider } = Layout;
 
 const LayoutComponent = ({ children }) => {
-
   const [sideWidth, setSidWidth] = useState('200px');
+  
   return (
     <Layout
       style={{
@@ -23,7 +25,6 @@ const LayoutComponent = ({ children }) => {
         onBreakpoint={(broken) => {
           console.log(broken);
         }}
-
         onCollapse={(collapsed, type) => {
           setSidWidth(collapsed ? '0px' : '200px');
           console.log(collapsed, type, sideWidth);
@@ -66,11 +67,16 @@ const LayoutComponent = ({ children }) => {
         </Footer>
       </Sider>
       <Layout style={{minHeight: '100%'}}>
-        <Content style={{ margin: '0', width: `calc(100% - ${sideWidth})`, overflowY: 'scroll', overflowX: 'clip' }} >          
+        <Content style={{ margin: '0', width: '100%', overflowY: 'scroll', overflowX: 'clip' }} >          
           {children}
         </Content>
       </Layout>
     </Layout>
   );
 };
+
+LayoutComponent.propTypes = {
+  children: PropTypes.node.isRequired, // Validate the 'children' prop
+};
+
 export default LayoutComponent;
