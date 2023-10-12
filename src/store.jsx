@@ -3,6 +3,7 @@ import sessionsReducer from "./features/sessions/sessionsSlice";
 import helicopterReducer from './features/helicopters/helicopterSlice';
 import paginationReducer from "./features/pagination/paginationSlice";
 import addItemReducer from "./features/addItem/addItemSlice";
+import reservationReducer from "./features/reservations/reservationSlice";
 
 const store = configureStore({
     reducer: {
@@ -10,6 +11,8 @@ const store = configureStore({
         pagination: paginationReducer,
         sessions: sessionsReducer,
         item: addItemReducer,
+        reservations: reservationReducer, 
+        
     },
 })
 

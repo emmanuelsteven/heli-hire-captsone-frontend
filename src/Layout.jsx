@@ -6,9 +6,9 @@ import PropTypes from 'prop-types';
 const { Content, Footer, Sider } = Layout;
 
 const LayoutComponent = ({ children }) => {
-
   const [sideWidth, setSidWidth] = useState('200px');
 
+  
   return (
     <Layout
       style={{
@@ -26,7 +26,6 @@ const LayoutComponent = ({ children }) => {
         onBreakpoint={(broken) => {
           console.log(broken);
         }}
-
         onCollapse={(collapsed, type) => {
           setSidWidth(collapsed ? '0px' : '200px');
           console.log(collapsed, type, sideWidth);
@@ -70,6 +69,11 @@ const LayoutComponent = ({ children }) => {
 
 LayoutComponent.propTypes = {
   children: PropTypes.node,
+};
+
+
+LayoutComponent.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default LayoutComponent;
