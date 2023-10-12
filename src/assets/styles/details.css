@@ -4,17 +4,11 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 80%;
+  width: 100%;
   position: absolute;
   margin-top: 70px;
   margin-left: 100px;
-  box-shadow: 20px 30px 1px #97bf11;
   background-color: #fff;
-}
-
-tr {
-  display: flex;
-  flex-direction: column;
 }
 
 .details-img {
@@ -50,16 +44,6 @@ tr {
 .desc-div .bg-silver {
   background-color: #e2e3e5;
   max-width: 100%;
-}
-
-table {
-  width: 100%;
-}
-
-table td {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
 }
 
 .return-btn {

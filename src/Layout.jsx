@@ -8,11 +8,13 @@ const { Content, Footer, Sider } = Layout;
 const LayoutComponent = ({ children }) => {
 
   const [sideWidth, setSidWidth] = useState('200px');
+
   return (
     <Layout
       style={{
         minHeight: '100vh',
         width: '100vw',
+        display: 'flex',
         overflowY: 'clip',
         position: 'relative',
       }}
@@ -53,21 +55,12 @@ const LayoutComponent = ({ children }) => {
           </li>
         </ul>
 
-        <Footer
-          style={sideWidth === '0px' ? {display: 'none'} : { 
-            textAlign: 'center',
-            position: 'absolute',
-            bottom: '0',
-            width: '100%',
-            background: 'none',
-            backdropFilter: 'blur(10px)',
-          }}
-        >
+        <Footer>
           <small>Heli Hire ©2023 Created by Full Stack Capstone Team</small> 
         </Footer>
       </Sider>
-      <Layout style={{minHeight: '100%'}}>
-        <Content style={{ margin: '0', width: `calc(100% - ${sideWidth})`, overflowY: 'scroll', overflowX: 'clip' }} >          
+      <Layout>
+        <Content className="m-0 w-full md:w-[calc(100%-200px)] overflow-clip">          
           {children}
         </Content>
       </Layout>
