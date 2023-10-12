@@ -42,7 +42,7 @@ const Details = () => {
           <p>{selectHelicopter.description}</p>
 
           <h3 className="border-solid border-2 pr-10 rounded-md border-gray-400 flex w-[300px] md:w-full items-center justify-between p-0">
-            <span className="bg-green-400 p-2 rounded-r-md">Price per day</span>
+            <span className="bg-[#97bf0f] text-white p-2 rounded-r-md">Price per day</span>
             {selectHelicopter.price} USD
           </h3>
           <table className="md:w-full p-0">
@@ -67,7 +67,7 @@ const Details = () => {
               </td>
             </tr>
           </table>
-          <button className="p-2 rounded-full bg-green-500 w-[300px] md:w-full">Reserve</button>
+          <button className="p-2 rounded-full bg-[#97bf0f] text-white w-[300px] md:w-full">Reserve</button>
           </figcaption>
         </figure>
         <div>
