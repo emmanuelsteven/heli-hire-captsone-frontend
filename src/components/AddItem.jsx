@@ -56,6 +56,7 @@ const AddItem = () => {
                 placeholder="Helicopter name"
                 type="text"
                 name="name"
+                required
                 value={formData.name}
                 onChange={handleFormInput}
               />
@@ -66,6 +67,7 @@ const AddItem = () => {
                 placeholder="contact email"
                 type="text"
                 name="contact"
+                required
                 value={formData.contact}
                 onChange={handleFormInput}
               />
@@ -76,6 +78,7 @@ const AddItem = () => {
                 placeholder="price/hr"
                 type="number"
                 name="price"
+                required
                 value={formData.price}
                 onChange={handleFormInput}
               />
@@ -86,6 +89,7 @@ const AddItem = () => {
                 placeholder="carriage capacity"
                 type="number"
                 name="carriage_capacity"
+                required
                 value={formData.carriage_capacity}
                 onChange={handleFormInput}
               />
@@ -96,6 +100,7 @@ const AddItem = () => {
                 placeholder="image url"
                 type="text"
                 name="image"
+                required
                 value={formData.image}
                 onChange={handleFormInput}
               />
@@ -106,6 +111,7 @@ const AddItem = () => {
                 placeholder="model number"
                 type="number"
                 name="model"
+                required
                 value={formData.model}
                 onChange={handleFormInput}
               />
