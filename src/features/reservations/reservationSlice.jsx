@@ -92,5 +92,5 @@ const reservationSlice = createSlice({
     },
 });
 
-export const { createMsgAction, setRemoveReservation } = reservationSlice.actions;
+export const { createMsgAction, setRemoveReservation, updateReservations } = reservationSlice.actions;
 export default reservationSlice.reducer;
