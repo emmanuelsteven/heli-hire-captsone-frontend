@@ -1,57 +1,62 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  fetchHelicopters,
-  deleteHelicopter,
-  updateHelicopters,
-} from "../features/helicopters/helicopterSlice";
+import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
 import LayoutComponent from "../Layout";
 import { Button, Table, Popconfirm } from 'antd';
 import { QuestionCircleOutlined } from "@ant-design/icons";
+import { deleteReservation, getReservations, updateReservations } from "../features/reservations/reservationSlice";
 
 const DeleteReservationComponent = () => {
   //hooks
   const dispatch = useDispatch();
-  const helicopters = useSelector((state) => state.helicopter);
-  const helicopterData = helicopters.helicopter;
-  console.log(helicopterData);
+  const helicopters = useSelector((state) => state.helicopter.helicopter);
+  const reservations = useSelector((state) => state.reservations);
+  const reservationsData = reservations.reservation;
+  console.log('reservations = ', reservationsData, 'helicopters = ',helicopters.filter((helicopter) => helicopter.id === 70)[0].name);
 
-  //handle delete function
+  // handle delete function
   const handleDelete = async (e, id) => {
     e.preventDefault();
-    dispatch(deleteHelicopter(+id));
-    const updatedHelicopters = helicopters.helicopter.filter((helicopter) => helicopter.id !== id);
-    dispatch (updateHelicopters(updatedHelicopters));
+    dispatch(deleteReservation(+id));
+    const updatedReservations = reservations.reservation.filter((reservation) => reservation.id !== id);
+    dispatch (updateReservations(updatedReservations));
   };
 
   // table columns
   const columns = [
     {
       title: 'Helicopter',
-      dataIndex: 'name',
-      key: 'name',
-    },
-    {
-      title: 'Description',
-      dataIndex: 'description',
-      key: 'description',
-      responsive: ['md'],
+      dataIndex: '',
+      key: 'helicopter name',
+      render: (reservation) => <p>{helicopters.filter((helicopter) => helicopter.id === reservation.helicopter_id)[0].name}</p>,
     },
     {
       title: 'Price (USD)',
-      dataIndex: 'price',
-      key: 'price',
+      dataIndex: '',
+      key: 'cost of reservation',
+      render: (reservation) => <p>{helicopters.filter((helicopter) => helicopter.id === reservation.helicopter_id)[0].price}</p>,
+      responsive: ['md'],
+    },
+    {
+      title: 'Reserved Date',
+      dataIndex: 'date',
+      key: 'reserved date',
+    },
+    {
+      title: 'City',
+      dataIndex: 'city',
+      key: 'reservation city',
     },
     {
       title: 'Action',
       dataIndex: '',
       key: 'delete button',
       width: 100,
-      render: (helicopter) => <Popconfirm
-      id={helicopter.id}
-      title="Delete Helicopter"
-      description="Are you sure to delete this helicopter?"
-      onConfirm={(e)=>handleDelete(e, helicopter.id)}
+      render: (reservation) => <Popconfirm
+      id={reservation.id}
+      title="Delete Reservation"
+      description="Are you sure to delete this reservation?"
+      onConfirm={(e)=>handleDelete(e, reservation.id)}
       okText="Yes"
       okType="danger"
       icon={
@@ -62,21 +67,22 @@ const DeleteReservationComponent = () => {
         />
       }
     >
-      <Button id={helicopter.id} danger>Delete</Button>
+      <Button id={reservation.id} danger>Delete</Button>
     </Popconfirm>,
     },
   ];
 
   useEffect(() => {
     dispatch(fetchHelicopters());
-  }, [dispatch, deleteHelicopter]);
+    dispatch(getReservations());
+  }, [dispatch]);
   return (
     <LayoutComponent>
       <Table
         pagination={true}
         pageSize={5}
         columns={columns}
-        dataSource={helicopterData} 
+        dataSource={reservationsData} 
         className="min-w-full h-full max-h-full overflow-y-scroll leading-normal"
         scroll={{ y: 480 }}
       />;

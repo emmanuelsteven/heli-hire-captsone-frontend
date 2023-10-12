@@ -29,7 +29,7 @@ export const getReservations = createAsyncThunk(
         // Handle the case where data is not an array, e.g., set it to an empty array
         return [];
       }
-  
+
       const reservation = data.map((reservation) => ({
         id: reservation.id,
         helicopter_id: reservation.helicopter_id,
@@ -41,7 +41,14 @@ export const getReservations = createAsyncThunk(
   
       return reservation;
     }
-  );
+);
+
+export const deleteReservation = createAsyncThunk('deleteReservation', async (id) => {
+  const userId = JSON.parse(localStorage.getItem('userId'));
+  const Reserve_url = `http://localhost:3000/api/users/${userId}/reservations/${id}`;
+  const response = await axios.delete(Reserve_url);
+  return response.data;
+});
   
 const initialState = {
     reservation: [],
@@ -61,6 +68,9 @@ const reservationSlice = createSlice({
             state.reservation = state.reservation.filter(
               (reservation) => reservation.helicopter_id !== action.payload,
             );
+          },
+          updateReservations: (state, action) => {
+            state.reservation = action.payload;
           },
     },
     extraReducers: (builder) => {
@@ -92,5 +102,5 @@ const reservationSlice = createSlice({
     },
 });
 
-export const { createMsgAction, setRemoveReservation } = reservationSlice.actions;
+export const { createMsgAction, setRemoveReservation, updateReservations } = reservationSlice.actions;
 export default reservationSlice.reducer;
