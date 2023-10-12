@@ -1,19 +1,20 @@
-import PropTypes from 'prop-types';
 import MenuComponent from "./components/Menu";
 import { Icon } from "@iconify/react";
 import { Layout, Space, Typography } from 'antd';
 import { useState } from "react";
-
+import PropTypes from 'prop-types';
 const { Content, Footer, Sider } = Layout;
 
 const LayoutComponent = ({ children }) => {
   const [sideWidth, setSidWidth] = useState('200px');
+
   
   return (
     <Layout
       style={{
         minHeight: '100vh',
         width: '100vw',
+        display: 'flex',
         overflowY: 'clip',
         position: 'relative',
       }}
@@ -53,21 +54,12 @@ const LayoutComponent = ({ children }) => {
           </li>
         </ul>
 
-        <Footer
-          style={{
-            textAlign: 'center',
-            position: 'absolute',
-            bottom: '0',
-            width: '100%',
-            background: 'none',
-            backdropFilter: 'blur(10px)',
-          }}
-        >
+        <Footer>
           <small>Heli Hire ©2023 Created by Full Stack Capstone Team</small> 
         </Footer>
       </Sider>
-      <Layout style={{minHeight: '100%'}}>
-        <Content style={{ margin: '0', width: '100%', overflowY: 'scroll', overflowX: 'clip' }} >          
+      <Layout>
+        <Content className="m-0 w-full md:w-[calc(100%-200px)] ">          
           {children}
         </Content>
       </Layout>
@@ -76,7 +68,12 @@ const LayoutComponent = ({ children }) => {
 };
 
 LayoutComponent.propTypes = {
-  children: PropTypes.node.isRequired, // Validate the 'children' prop
+  children: PropTypes.node,
+};
+
+
+LayoutComponent.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default LayoutComponent;

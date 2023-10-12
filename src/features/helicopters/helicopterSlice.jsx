@@ -33,7 +33,11 @@ const initialState = {
 const helicopterSlice = createSlice({
   name: "helicopter",
   initialState,
-  reducers: {},
+  reducers: {
+    updateHelicopters: (state, action) => {
+      state.helicopter = action.payload;
+    },
+  },
   extraReducers(builder) {
     builder.addCase(fetchHelicopters.fulfilled, (state, action) => {
       const helicopterfetched = action.payload;
@@ -43,4 +47,5 @@ const helicopterSlice = createSlice({
 });
 
 export { fetchHelicopters };
+export const { updateHelicopters } = helicopterSlice.actions;
 export default helicopterSlice.reducer;

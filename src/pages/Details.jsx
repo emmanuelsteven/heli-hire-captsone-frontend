@@ -22,7 +22,7 @@ const Details = () => {
   const selectHelicopter = helicopter.find((item) => item.id === Number(id));
   
   if (!selectHelicopter) {
-    return <div>Loading...</div>; // or handle the absence of data differently
+    return <div>Loading...</div>;
   }
 
   const handlePreviousPage = () => {
@@ -30,49 +30,52 @@ const Details = () => {
   };
   return (
     <LayoutComponent>
-      {" "}
-      <h1 className="det-title">Helicopter Details </h1>
-      <main>
-        <div>
-          <button className="return-btn" onClick={handlePreviousPage}>
-            <FaAngleLeft />
-          </button>
-        </div>
-        <div className="img-div">
+      <div className="h-[100vh] md:w-[100%] flex-col">
+        <figure className="flex flex-col md:grow md:flex-row h-[90%]">
           <img
             src={selectHelicopter.image}
             alt={selectHelicopter.name}
-            className="details-img"
+            className="w-full h-[55%]  md:w-[70%] md:h-full rounded-md shadow-xl"
           />
-        </div>
-        <div className="desc-div">
-          <h1>{selectHelicopter.name}</h1>
-          <h6>Price: {selectHelicopter.price} $</h6>
-          <table>
-            <tr>
-              <td className="bg-white">
-                <span> Model: </span>
-                <span className="text-right">{selectHelicopter.model}</span>
+          <figcaption className="prose w-full justify-between items-center md:w-[30%] flex flex-col grow gap-2  pt-10">
+          <h1 className="text-2xl">{selectHelicopter.name}</h1>
+          <p>{selectHelicopter.description}</p>
+
+          <h3 className="border-solid border-2 pr-10 rounded-md border-gray-400 flex w-[300px] md:w-full items-center justify-between p-0">
+            <span className="bg-[#97bf0f] text-white p-2 rounded-r-md">Price per day</span>
+            {selectHelicopter.price} USD
+          </h3>
+          <table className="md:w-full p-0">
+            <tr className="flex flex-col w-[300px]  md:w-[100%]">
+              <td className="">
+                <h3 className="border-solid border-2 pr-10 rounded-md border-gray-400 flex w-[300px] md:w-full items-center justify-between p-0">
+                  <span className="bg-gray-400 p-2 rounded-r-md">Model </span>
+                  {selectHelicopter.model}
+                </h3>
               </td>
-              <td className="bg-silver">
-                <span>Carriage Capacity: </span>{" "}
-                <span className="text-right">
+              <td className="">
+                <h3 className="border-solid border-2 pr-10 rounded-md border-gray-400 flex w-[300px] md:w-full items-center justify-between p-0">
+                  <span className="bg-gray-400 p-2 rounded-r-md">Carriage capacity </span>
                   {selectHelicopter.carriage_capacity}
-                </span>
+                </h3>
               </td>
-              <td className="bg-white">
-                <span>Contact: </span>
-                <span className="text-right">{selectHelicopter.contact}</span>
-              </td>
-              <td className="bg-silver">
-                <span>Color:</span>
-                <span className="text-right"> Base Color</span>
+              <td className="">
+                <h3 className="border-solid border-2 pr-10 rounded-md border-gray-400 flex w-[300px] md:w-full items-center justify-between p-0">
+                  <span className="bg-gray-400 p-2 rounded-r-md">Contact</span>
+                  {selectHelicopter.contact}
+                </h3>
               </td>
             </tr>
           </table>
-          <button className="res-btn">Reserve</button>
+          <button className="p-2 rounded-full bg-[#97bf0f] text-white w-[300px] md:w-full">Reserve</button>
+          </figcaption>
+        </figure>
+        <div>
+          <button className="p-5 bg-slate-600 rounded-l-full" onClick={handlePreviousPage}>
+            <FaAngleLeft />
+          </button>
         </div>
-      </main>
+      </div>
     </LayoutComponent>
   );
 };

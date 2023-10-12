@@ -1,8 +1,9 @@
 import { GroupOutlined, BarsOutlined, DeleteOutlined, EditOutlined, DiffOutlined } from '@ant-design/icons';
-import { Menu } from 'antd';
+import { ConfigProvider, Menu } from 'antd';
 import { useDispatch } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { logOut } from '../features/sessions/sessionsSlice';
+
 
 const MenuComponent = () => {
     const dispatch = useDispatch();
@@ -28,14 +29,29 @@ const MenuComponent = () => {
         case '/new-helicopter':
             seletedKey = '4';
             break;
-        case '/delete':
+        case '/delete-helicopter' || '/delete-reservation':
             seletedKey = '5';
+            break;
+        case '/delete-helicopter':
+            seletedKey = '6';
+            break;
+        case '/delete-reservation':
+            seletedKey = '7';
             break;
         default:
             seletedKey = '';
             break;   
     }
     return (
+      <ConfigProvider
+        theme={{
+          components: {
+            Menu: {
+              colorPrimary: '#97bf11',
+            },
+          },
+        }}
+      >
         <Menu
           theme="light"
           mode="inline"
@@ -65,7 +81,17 @@ const MenuComponent = () => {
               {
                 key: 5,
                 icon: <DeleteOutlined />,
-                label: <Link to={'/delete'}>Delete</Link>,
+                label: 'Delete',
+                children: [
+                  {
+                    key: 6,
+                    label: <Link to={'/delete-helicopter'}>Delete Helicopter</Link>,
+                  },
+                  {
+                    key: 7,
+                    label: <Link to={'/delete-reservation'}>Delete Reservation</Link>,
+                  },
+                ],
               },
               {
                 key: 6,
@@ -80,6 +106,7 @@ const MenuComponent = () => {
             ]
          }
         />
+      </ConfigProvider>
       );
 }
  
