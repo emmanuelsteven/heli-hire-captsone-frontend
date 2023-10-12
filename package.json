@@ -47,6 +47,7 @@
     "jest-svg-transformer": "^1.0.0",
     "postcss": "^8.4.31",
     "react-test-renderer": "^18.2.0",
+    "redux-mock-store": "^1.5.4",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
@@ -54,7 +55,6 @@
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.5"
   },
-
   "jest": {
     "testEnvironment": "jsdom",
     "moduleNameMapper": {
