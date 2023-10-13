@@ -17,6 +17,9 @@ const paginationSlice = createSlice({
                 state.currentPage -= 1;
             }
         },
+        updateItemsPerPage: (state, action) => {
+            state.itemsPerPage = action.payload;
+        },
     },
 });
 
