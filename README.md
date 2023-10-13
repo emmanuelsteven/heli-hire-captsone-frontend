@@ -7,7 +7,7 @@
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [ HeliHire 🏠️🛠️ ](#-HeliHire-)
+- [ HeliHire 🚁✈️ ](#-HeliHire-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -26,7 +26,7 @@
   - [📝 License ](#-license-)
 
 
-# HeliHire 🏠️🛠️ <a name="about-project"></a>
+# HeliHire 🚁✈️ <a name="about-project"></a>
 
 <b>HeliHire</b> is a website where users can book a Helicopter, cancel a booking. The user can also see the details of a Helicopter, ratings of the service.
 
