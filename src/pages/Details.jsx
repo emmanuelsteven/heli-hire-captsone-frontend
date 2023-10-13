@@ -27,6 +27,7 @@ const Details = () => {
   const handlePreviousPage = () => {
     navigate("/helicopters");
   };
+  const filtered = helicopter.filter((item) => item.id === Number(id));
   return (
     <LayoutComponent>
       <div className="h-[100vh] md:w-[100%] flex-col">
@@ -66,7 +67,14 @@ const Details = () => {
               </td>
             </tr>
           </table>
-          <Link to='/new-reservation' className="p-2 rounded-full bg-[#97bf0f] text-white w-[300px] md:w-full">Reserve</Link>
+
+          <button className="p-2 rounded-full bg-[#97bf0f] text-white w-[300px] md:w-full"> <Link
+              className="reserve-btn"
+              to="/new-reservation"
+              state={{ chosenHelicopterId: filtered[0].id }}
+            >
+              Reserve
+            </Link></button>
           </figcaption>
         </figure>
         <div>

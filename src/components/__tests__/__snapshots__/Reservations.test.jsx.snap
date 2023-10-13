@@ -228,7 +228,7 @@ exports[`Reservations component snapshot 1`] = `
           </li>
           <li
             class="ant-menu-item ant-menu-item-only-child"
-            data-menu-id="rc-menu-uuid-test-6"
+            data-menu-id="rc-menu-uuid-test-8"
             role="menuitem"
             style="padding-left: 24px;"
             tabindex="-1"

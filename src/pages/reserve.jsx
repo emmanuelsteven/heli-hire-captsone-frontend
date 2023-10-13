@@ -5,6 +5,7 @@ import { postReservation, createMsgAction } from "../features/reservations/reser
 import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
 import "../stylesheets/reserve.css";
 import LayoutComponent from "../components/Layout";
+import cities from "../assets/data/cities";
 
 const Reserve = () => {
   const helicopters = useSelector((state) => state.helicopter.helicopter);
@@ -63,37 +64,6 @@ const Reserve = () => {
         </div>
       );
     }
-
-      const cities = [
-        // Cities from Nigeria
-    'Lagos',
-    'Abuja',
-    'Kano',
-    'Ibadan',
-    'Port Harcourt',
-    'Benin City',
-   //cities in ghana
-        'Accra',
-        'Tamale',
-        'Cape Cost',
-        'Obuasi',
-        'Tema',
-        'Madina',
-        //cities in urganda
-        'Kampala',
-        'Kira',
-        'Njeru',
-        'Gulu',
-        'Masaka',
-        'Lira',
-        //cities in  pakistan
-        'Karachi',
-        'lahore',
-        'Multan',
-        'Quetta',
-        'Sukkur',
-        'Larkana',
-          ];
           const statusOption = ['Confirmed', 'Not confirmed'];
           const handleSubmit = (e) => {
             e.preventDefault();

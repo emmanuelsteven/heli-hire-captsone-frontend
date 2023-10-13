@@ -120,14 +120,14 @@ The page will reload when you make changes.
 
 You may also see any lint errors in the console.
 
-<!-- 
+
 ### Run tests
 
 To run tests, run the following command:
 
 ```
 $ npm test
-``` -->
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

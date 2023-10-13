@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter } from 'react-router-dom';
-import Reservations from '../reservations';
+import Reservations from '../../pages/reservations';
 import "@testing-library/jest-dom";
 import store from '../../store';
 
