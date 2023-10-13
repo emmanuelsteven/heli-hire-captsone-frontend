@@ -5,7 +5,7 @@ import {
   deleteHelicopter,
   updateHelicopters,
 } from "../features/helicopters/helicopterSlice";
-import LayoutComponent from "../Layout";
+import LayoutComponent from "../components/Layout";
 import { Button, Table, Popconfirm } from 'antd';
 const { Column } = Table;
 import { QuestionCircleOutlined } from "@ant-design/icons";
@@ -49,9 +49,7 @@ const DeleteHelicopterComponent = () => {
           title="Action"
           key={uuidv4()}
           dataIndex={''}
-          render={(helicopter) => {
-            console.log(helicopter);
-            return (
+          render={(helicopter) => (
             <Popconfirm
               id={helicopter.key}
               title="Delete Helicopter"
@@ -69,7 +67,7 @@ const DeleteHelicopterComponent = () => {
             >
               <Button id={helicopter.key} danger>Delete</Button>
             </Popconfirm>
-          )}}
+          )}
         />
       </Table>
     </LayoutComponent>

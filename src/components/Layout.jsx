@@ -1,4 +1,4 @@
-import MenuComponent from "./components/Menu";
+import MenuComponent from "./Menu";
 import { Icon } from "@iconify/react";
 import { Layout, Space, Typography } from 'antd';
 import { useState } from "react";

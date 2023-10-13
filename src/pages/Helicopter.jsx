@@ -3,9 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
 import { Icon } from '@iconify/react';
 import PropTypes from 'prop-types';
-import { nextPage, prevPage,  } from "../features/pagination/paginationSlice";
+import { nextPage, prevPage } from "../features/pagination/paginationSlice";
 import { Link, useNavigate } from "react-router-dom";
-import LayoutComponent from "../Layout";
+import LayoutComponent from "../components/Layout";
 
 const HelicopterList = () => {
     const { helicopter } = useSelector((state) => state.helicopter);

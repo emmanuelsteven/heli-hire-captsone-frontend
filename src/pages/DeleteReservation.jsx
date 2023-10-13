@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
-import LayoutComponent from "../Layout";
+import LayoutComponent from "../components/Layout";
 import { Button, Table, Popconfirm } from 'antd';
 const { Column } = Table; 
 import { QuestionCircleOutlined } from "@ant-design/icons";

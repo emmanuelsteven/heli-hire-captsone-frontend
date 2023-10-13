@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { postReservation, createMsgAction } from "../features/reservations/reservationSlice"
 import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
 import "../stylesheets/reserve.css";
-import LayoutComponent from "../Layout";
+import LayoutComponent from "../components/Layout";
 
 const Reserve = () => {
   const helicopters = useSelector((state) => state.helicopter.helicopter);

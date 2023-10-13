@@ -4,9 +4,9 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { FaAngleLeft } from "react-icons/fa";
 import { fetchHelicopters } from "../features/helicopters/helicopterSlice";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import "../assets/styles/details.css";
-import LayoutComponent from "../Layout";
+import LayoutComponent from "../components/Layout";
 
 const Details = () => {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const Details = () => {
   }
 
   const handlePreviousPage = () => {
-    navigate("/");
+    navigate("/helicopters");
   };
   return (
     <LayoutComponent>
@@ -67,11 +67,11 @@ const Details = () => {
               </td>
             </tr>
           </table>
-          <button className="p-2 rounded-full bg-[#97bf0f] text-white w-[300px] md:w-full">Reserve</button>
+          <Link to='/new-reservation' className="p-2 rounded-full bg-[#97bf0f] text-white w-[300px] md:w-full">Reserve</Link>
           </figcaption>
         </figure>
         <div>
-          <button className="p-5 bg-slate-600 rounded-l-full" onClick={handlePreviousPage}>
+          <button className="p-5 bg-[#96be0d] rounded-l-full" onClick={handlePreviousPage}>
             <FaAngleLeft />
           </button>
         </div>

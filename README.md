@@ -88,12 +88,10 @@ $ git clone https://github.com/emmanuelsteven/heli-hire-captsone-frontend.git
 
 ### Usage
 
-
-Kindly modify the files as needed.
-
 In the project directory, you can run:
 ```
-$ npm start
+ npm i
+ npm run dev
 ```
 Runs the app in the development mode.\
 Open [http://localhost:5173/] to view it in your browser.
@@ -101,7 +99,6 @@ Open [http://localhost:5173/] to view it in your browser.
 The page will reload when you make changes.
 
 You may also see any lint errors in the console.
-
 
 
 ### Run tests
@@ -160,9 +157,9 @@ Give a ⭐️ if you like this project!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank:
+We would like to thank:
 - Hats off of [Murat Korkmaz](https://www.behance.net/muratk) for a beautiful, efficient, and accessible user interface [Design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign).
-
+- Microverse for the awesome challenge
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

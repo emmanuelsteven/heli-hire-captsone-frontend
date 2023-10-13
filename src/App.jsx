@@ -1,19 +1,20 @@
 import { Route, Routes } from "react-router-dom";
-import HelicopterList from "./components/Helicopter";
+import HelicopterList from "./pages/Helicopter";
 import Details from "./pages/Details";
-import AddItem from "./components/AddItem";
+import AddItem from "./pages/AddItem";
 import Login from "./components/sessions/login";
 import Register from "./components/sessions/signup";
-import Reserve from "./components/reserve";
-import Reservations from "./components/reservations";
-import DeleteReservationComponent from "./components/DeleteReservation";
-import DeleteHelicopterComponent from "./components/DeleteHelicopter";
+import Reserve from "./pages/reserve";
+import Reservations from "./pages/reservations";
+import DeleteReservationComponent from "./pages/DeleteReservation";
+import DeleteHelicopterComponent from "./pages/DeleteHelicopter";
 
 
 const App = () => {
     return (
         <Routes>
             <Route path="/" element={<Register />} />
+            <Route path="*" element={<Login />} />
             <Route path="/login" element={<Login />} />
             <Route path="/new-helicopter" element={<AddItem />} />
             <Route path="/helicopters" element={<HelicopterList />} />

@@ -4,7 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { getReservations } from '../features/reservations/reservationSlice';
 import { fetchHelicopters } from '../features/helicopters/helicopterSlice';
 import '../stylesheets/reservations.css';
-import LayoutComponent from "../Layout";
+import LayoutComponent from "../components/Layout";
 
 const Reservations = () => {
   const isLoggedIn = JSON.parse(window.localStorage.getItem('logged_in'));
@@ -93,11 +93,14 @@ const Reservations = () => {
                     ))}
                   </tbody>
                 </table>
+                <Link to="/new-reservation" className="p-4 rounded-full shadow-lg bg-[#81bf0fc8]">
+                  Click here to reserve a helicopter
+                </Link>
               </div>
             ) : (
-              <div className="no-reservations-container">
-                <p className="no-reservations-msg">You have no reservations</p>
-                <Link to="/helicopters" className="no-reservations-link">
+              <div className="flex flex-col items-center justify-around">
+                <p className="m-4">You have no reservations</p>
+                <Link to="/new-reservation" className="p-4 rounded-full shadow-lg bg-[#81bf0fc8]">
                   Click here to reserve a helicopter
                 </Link>
               </div>

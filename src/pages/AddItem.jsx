@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../features/addItem/addItemSlice";
 import { useNavigate } from "react-router";
-import LayoutComponent from "../Layout";
+import LayoutComponent from "../components/Layout";
 
 const AddItem = () => {
   const [formData, setFormData] = useState({
