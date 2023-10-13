@@ -1,16 +1,17 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h1><b>HeliHire 🏠️🛠️</b></h1>
+  <h1><b>HeliHire 🚁✈️</b></h1>
 </div>
 
 # 📗 Table of Contents
 
 - [📗 Table of Contents](#-table-of-contents)
-- [ HandyMate 🏠️🛠️ ](#-HandyMate-)
+- [ HeliHire 🏠️🛠️ ](#-HeliHire-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+    - [Kanban Board ](#kanban-board-)
   - [🚀 Live Demo ](#-live-demo-)
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
@@ -31,21 +32,40 @@
 
 ## 🛠 Built With <a name="built-with"></a>
 
-### Tech Stack <a name="tech-stack"></a>
-
-
+### React <a name="tech-stack">
 <details>
-  <summary>Client</summary>
+  <summary>React</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
   </ul>
 </details>
 
+## 🔭 Key Features <a name="key-features"></a>
+
+- [ ]  Users can register or login into the app.
+- [ ]  Users can view and/or put helicopters up for hire and also delete any helicopters they put up for hire.
+- [ ]  Users can reserve/book helicopter, view their reservations, and delete their reservations.
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ### App Screenshot
 
 ![Screenshot 2023-10-12 at 14 01 17 (8)](https://github.com/emmanuelsteven/heli-hire-captsone-frontend/assets/96125730/ab9b0592-9e3e-4201-b0b2-6a22b4a5278d)
 
+## 🔭 Kanban Board <a name="kanban-board"></a>
 
+### Kanban Screenshot
+
+### details
+We are a team of four developers working on this project
+
+view our initial kanbanboard [here](https://github.com/emmanuelsteven/heli-hire-captone-backend/issues/12)
+
+![image](https://github.com/emmanuelsteven/heli-hire-captsone-frontend/assets/26620878/9696aae4-570d-431b-8b7a-f7522f57200d)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 ### Back-end Repository
 - Here is the link of the [Back-End](https://github.com/emmanuelsteven/heli-hire-captone-backend)
 
