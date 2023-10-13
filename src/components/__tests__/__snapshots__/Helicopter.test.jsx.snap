@@ -4,7 +4,7 @@ exports[`HelicopterList snapshot 1`] = `
 <DocumentFragment>
   <div
     class="ant-layout ant-layout-has-sider css-dev-only-do-not-override-pr0fja"
-    style="min-height: 100vh; width: 100vw; overflow-y: clip; position: relative;"
+    style="height: 100vh; width: 100vw; display: flex; overflow-y: clip; position: relative;"
   >
     <aside
       class="ant-layout-sider ant-layout-sider-light"
@@ -28,7 +28,7 @@ exports[`HelicopterList snapshot 1`] = `
           </div>
         </div>
         <ul
-          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light css-dev-only-do-not-override-pr0fja"
+          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light css-dev-only-do-not-override-1einota"
           data-menu-list="true"
           role="menu"
           tabindex="0"
@@ -184,40 +184,47 @@ exports[`HelicopterList snapshot 1`] = `
             </span>
           </li>
           <li
-            class="ant-menu-item"
-            data-menu-id="rc-menu-uuid-test-5"
-            role="menuitem"
-            style="padding-left: 24px;"
-            tabindex="-1"
+            class="ant-menu-submenu ant-menu-submenu-inline"
+            role="none"
           >
-            <span
-              aria-label="delete"
-              class="anticon anticon-delete ant-menu-item-icon"
-              role="img"
+            <div
+              aria-controls="rc-menu-uuid-test-5-popup"
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="ant-menu-submenu-title"
+              data-menu-id="rc-menu-uuid-test-5"
+              role="menuitem"
+              style="padding-left: 24px;"
+              tabindex="-1"
             >
-              <svg
-                aria-hidden="true"
-                data-icon="delete"
-                fill="currentColor"
-                focusable="false"
-                height="1em"
-                viewBox="64 64 896 896"
-                width="1em"
+              <span
+                aria-label="delete"
+                class="anticon anticon-delete ant-menu-item-icon"
+                role="img"
               >
-                <path
-                  d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"
-                />
-              </svg>
-            </span>
-            <span
-              class="ant-menu-title-content"
-            >
-              <a
-                href="/delete"
+                <svg
+                  aria-hidden="true"
+                  data-icon="delete"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="ant-menu-title-content"
               >
                 Delete
-              </a>
-            </span>
+              </span>
+              <i
+                class="ant-menu-submenu-arrow"
+              />
+            </div>
           </li>
           <li
             class="ant-menu-item ant-menu-item-only-child"
@@ -257,7 +264,6 @@ exports[`HelicopterList snapshot 1`] = `
         </ul>
         <footer
           class="ant-layout-footer css-dev-only-do-not-override-pr0fja"
-          style="text-align: center; position: absolute; bottom: 0px; width: 100%; background: none;"
         >
           <small>
             Heli Hire ©2023 Created by Full Stack Capstone Team
@@ -267,11 +273,9 @@ exports[`HelicopterList snapshot 1`] = `
     </aside>
     <div
       class="ant-layout css-dev-only-do-not-override-pr0fja"
-      style="min-height: 100%;"
     >
       <main
-        class="ant-layout-content css-dev-only-do-not-override-pr0fja"
-        style="margin: 0px; width: 100%; overflow-y: scroll; overflow-x: clip;"
+        class="ant-layout-content m-0 w-full h-[100vh] md:w-[calc(100%-200px)] overflow-clip css-dev-only-do-not-override-pr0fja"
       >
         <section
           class="home-page"
@@ -293,6 +297,7 @@ exports[`HelicopterList snapshot 1`] = `
           </div>
           <button
             class="back"
+            style="background: rgb(239, 239, 239);"
           >
             <span />
           </button>
@@ -302,6 +307,7 @@ exports[`HelicopterList snapshot 1`] = `
           <button
             class="next"
             disabled=""
+            style="background: rgb(239, 239, 239);"
           >
             <span />
           </button>
