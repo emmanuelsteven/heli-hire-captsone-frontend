@@ -94,7 +94,7 @@ const MenuComponent = () => {
                 ],
               },
               {
-                key: 6,
+                key: 8,
                 label: <button
                 className="logout"
                 type="button"
