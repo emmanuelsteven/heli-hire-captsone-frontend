@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-// import { useParams } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { FaAngleLeft } from "react-icons/fa";
@@ -28,6 +28,7 @@ const Details = () => {
   const handlePreviousPage = () => {
     navigate("/");
   };
+  const filtered = helicopter.filter((item) => item.id === Number(id));
   return (
     <LayoutComponent>
       <div className="h-[100vh] md:w-[100%] flex-col">
@@ -67,11 +68,18 @@ const Details = () => {
               </td>
             </tr>
           </table>
-          <button className="p-2 rounded-full bg-[#97bf0f] text-white w-[300px] md:w-full">Reserve</button>
+          <button className="p-2 rounded-full bg-[#97bf0f] text-white w-[300px] md:w-full"> <Link
+              className="reserve-btn"
+              to="/new-reservation"
+              state={{ chosenHelicopterId: filtered[0].id }}
+            >
+              Reserve
+            </Link></button>
           </figcaption>
         </figure>
         <div>
           <button className="p-5 bg-slate-600 rounded-l-full" onClick={handlePreviousPage}>
+              
             <FaAngleLeft />
           </button>
         </div>
