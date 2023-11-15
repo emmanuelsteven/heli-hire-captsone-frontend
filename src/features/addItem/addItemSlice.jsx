@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const  url = 'http://localhost:3000/api/helicopter'
+const  url = 'https://heli-hire-capstone-backend.onrender.com/api/helicopter'
 
 const addItem = createAsyncThunk('item/addItem', async (formData) => {
     try {
