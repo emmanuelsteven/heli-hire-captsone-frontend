@@ -1,0 +1,319 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HelicopterList snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="ant-layout ant-layout-has-sider css-dev-only-do-not-override-pr0fja"
+    style="height: 100vh; width: 100vw; display: flex; overflow-y: clip; position: relative;"
+  >
+    <aside
+      class="ant-layout-sider ant-layout-sider-light"
+      style="padding-block: 20px; z-index: 999; flex: 0 0 200px; max-width: 200px; min-width: 200px; width: 200px;"
+    >
+      <div
+        class="ant-layout-sider-children"
+      >
+        <div
+          class="ant-space css-dev-only-do-not-override-pr0fja ant-space-horizontal ant-space-align-center ant-space-gap-row-small ant-space-gap-col-small demo-logo-vertical"
+        >
+          <div
+            class="ant-space-item"
+          >
+            <h2
+              class="ant-typography css-dev-only-do-not-override-pr0fja"
+              style="color: black; text-align: center;"
+            >
+              Heli Hire
+            </h2>
+          </div>
+        </div>
+        <ul
+          class="ant-menu ant-menu-root ant-menu-inline ant-menu-light css-dev-only-do-not-override-1einota"
+          data-menu-list="true"
+          role="menu"
+          tabindex="0"
+        >
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-1"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              aria-label="group"
+              class="anticon anticon-group ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="group"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <defs>
+                  <style />
+                </defs>
+                <path
+                  d="M912 820.1V203.9c28-9.9 48-36.6 48-67.9 0-39.8-32.2-72-72-72-31.3 0-58 20-67.9 48H203.9C194 84 167.3 64 136 64c-39.8 0-72 32.2-72 72 0 31.3 20 58 48 67.9v616.2C84 830 64 856.7 64 888c0 39.8 32.2 72 72 72 31.3 0 58-20 67.9-48h616.2c9.9 28 36.6 48 67.9 48 39.8 0 72-32.2 72-72 0-31.3-20-58-48-67.9zM888 112c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zM136 912c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm0-752c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm704 680H184V184h656v656zm48 72c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24z"
+                />
+                <path
+                  d="M288 474h448c8.8 0 16-7.2 16-16V282c0-8.8-7.2-16-16-16H288c-8.8 0-16 7.2-16 16v176c0 8.8 7.2 16 16 16zm56-136h336v64H344v-64zm-56 420h448c8.8 0 16-7.2 16-16V566c0-8.8-7.2-16-16-16H288c-8.8 0-16 7.2-16 16v176c0 8.8 7.2 16 16 16zm56-136h336v64H344v-64z"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              <a
+                href="/helicopters"
+              >
+                Helicopters
+              </a>
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-2"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              aria-label="edit"
+              class="anticon anticon-edit ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="edit"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M257.7 752c2 0 4-.2 6-.5L431.9 722c2-.4 3.9-1.3 5.3-2.8l423.9-423.9a9.96 9.96 0 000-14.1L694.9 114.9c-1.9-1.9-4.4-2.9-7.1-2.9s-5.2 1-7.1 2.9L256.8 538.8c-1.5 1.5-2.4 3.3-2.8 5.3l-29.5 168.2a33.5 33.5 0 009.4 29.8c6.6 6.4 14.9 9.9 23.8 9.9zm67.4-174.4L687.8 215l73.3 73.3-362.7 362.6-88.9 15.7 15.6-89zM880 836H144c-17.7 0-32 14.3-32 32v36c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-36c0-17.7-14.3-32-32-32z"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              <a
+                href="/new-reservation"
+              >
+                Add Reservation
+              </a>
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-3"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              aria-label="bars"
+              class="anticon anticon-bars ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="bars"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="0 0 1024 1024"
+                width="1em"
+              >
+                <path
+                  d="M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              <a
+                href="/reservations"
+              >
+                My Reservations
+              </a>
+            </span>
+          </li>
+          <li
+            class="ant-menu-item"
+            data-menu-id="rc-menu-uuid-test-4"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              aria-label="diff"
+              class="anticon anticon-diff ant-menu-item-icon"
+              role="img"
+            >
+              <svg
+                aria-hidden="true"
+                data-icon="diff"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M476 399.1c0-3.9-3.1-7.1-7-7.1h-42c-3.8 0-7 3.2-7 7.1V484h-84.5c-4.1 0-7.5 3.1-7.5 7v42c0 3.8 3.4 7 7.5 7H420v84.9c0 3.9 3.2 7.1 7 7.1h42c3.9 0 7-3.2 7-7.1V540h84.5c4.1 0 7.5-3.2 7.5-7v-42c0-3.9-3.4-7-7.5-7H476v-84.9zM560.5 704h-225c-4.1 0-7.5 3.2-7.5 7v42c0 3.8 3.4 7 7.5 7h225c4.1 0 7.5-3.2 7.5-7v-42c0-3.8-3.4-7-7.5-7zm-7.1-502.6c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v704c0 17.7 14.3 32 32 32h512c17.7 0 32-14.3 32-32V397.3c0-8.5-3.4-16.6-9.4-22.6L553.4 201.4zM664 888H232V264h282.2L664 413.8V888zm190.2-581.4L611.3 72.9c-6-5.7-13.9-8.9-22.2-8.9H296c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h277l219 210.6V824c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8V329.6c0-8.7-3.5-17-9.8-23z"
+                />
+              </svg>
+            </span>
+            <span
+              class="ant-menu-title-content"
+            >
+              <a
+                href="/new-helicopter"
+              >
+                Add Helicopter
+              </a>
+            </span>
+          </li>
+          <li
+            class="ant-menu-submenu ant-menu-submenu-inline"
+            role="none"
+          >
+            <div
+              aria-controls="rc-menu-uuid-test-5-popup"
+              aria-expanded="false"
+              aria-haspopup="true"
+              class="ant-menu-submenu-title"
+              data-menu-id="rc-menu-uuid-test-5"
+              role="menuitem"
+              style="padding-left: 24px;"
+              tabindex="-1"
+            >
+              <span
+                aria-label="delete"
+                class="anticon anticon-delete ant-menu-item-icon"
+                role="img"
+              >
+                <svg
+                  aria-hidden="true"
+                  data-icon="delete"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"
+                  />
+                </svg>
+              </span>
+              <span
+                class="ant-menu-title-content"
+              >
+                Delete
+              </span>
+              <i
+                class="ant-menu-submenu-arrow"
+              />
+            </div>
+          </li>
+          <li
+            class="ant-menu-item ant-menu-item-only-child"
+            data-menu-id="rc-menu-uuid-test-8"
+            role="menuitem"
+            style="padding-left: 24px;"
+            tabindex="-1"
+          >
+            <span
+              class="ant-menu-title-content"
+            >
+              <button
+                class="logout"
+                type="button"
+              >
+                Logout
+              </button>
+            </span>
+          </li>
+        </ul>
+        <div
+          aria-hidden="true"
+          style="display: none;"
+        />
+        <ul
+          class="icons mx-auto relative top-[13rem]"
+        >
+          <li>
+            <span />
+          </li>
+          <li>
+            <span />
+          </li>
+          <li>
+            <span />
+          </li>
+        </ul>
+        <footer
+          class="ant-layout-footer css-dev-only-do-not-override-pr0fja"
+        >
+          <small>
+            Heli Hire ©2023 Created by Full Stack Capstone Team
+          </small>
+        </footer>
+      </div>
+    </aside>
+    <div
+      class="ant-layout css-dev-only-do-not-override-pr0fja"
+    >
+      <main
+        class="ant-layout-content m-0 w-full h-[100vh] md:w-[calc(100%-200px)] overflow-clip css-dev-only-do-not-override-pr0fja"
+      >
+        <section
+          class="home-page"
+        >
+          <h1
+            class="latest-models"
+          >
+            LATEST MODELS
+          </h1>
+          <p
+            class="description-1"
+          >
+            Please select a chopper to hire
+          </p>
+          <div
+            class="span"
+          >
+            ...............
+          </div>
+          <button
+            class="back"
+            style="background: rgb(239, 239, 239);"
+          >
+            <span />
+          </button>
+          <div
+            class="choppers"
+          />
+          <button
+            class="next"
+            disabled=""
+            style="background: rgb(239, 239, 239);"
+          >
+            <span />
+          </button>
+        </section>
+      </main>
+    </div>
+  </div>
+</DocumentFragment>
+`;

@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2023 Emmanuel Steven
+Copyright (c) [2023] [Kodjo-Sarso Tetteh, Emmanuel Steven, Ronnie Bisaso, Ismail Chagenzi]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
