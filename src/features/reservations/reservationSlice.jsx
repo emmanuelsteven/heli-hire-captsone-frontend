@@ -26,7 +26,7 @@ export const getReservations = createAsyncThunk(
       const { data } = response;
   
       if (!Array.isArray(data)) {
-        // Handle the case where data is not an array, e.g., set it to an empty array
+       
         return [];
       }
 
