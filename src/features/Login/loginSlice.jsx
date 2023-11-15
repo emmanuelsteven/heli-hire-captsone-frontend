@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 
-const url = 'http://localhost:3000/login'
+const url = 'https://heli-hire-capstone-backend.onrender.com/login'
 
 const fetchlogin = createAsyncThunk('login/fetchlogin', async (userData) => {
     const response = await fetch(url, {
