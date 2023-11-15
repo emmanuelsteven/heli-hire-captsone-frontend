@@ -5,7 +5,7 @@ import axios from "axios";
 export const postReservation = createAsyncThunk(
     'postReservation', async(data) => {
         const userId = JSON.parse(localStorage.getItem('userId'));
-        const Reserve_url = `http://localhost:3000/api/users/${userId}/reservations`;
+        const Reserve_url = `https://heli-hire-capstone-backend.onrender.com/api/users/${userId}/reservations`;
         const response = await axios.post(Reserve_url, data);
         return response.data;
     },
@@ -16,7 +16,7 @@ export const getReservations = createAsyncThunk(
     'getReservations',
     async () => {
       const userId = JSON.parse(localStorage.getItem('userId'));
-      const Reserve_url = `http://localhost:3000/api/users/${userId}/reservations`;
+      const Reserve_url = `https://heli-hire-capstone-backend.onrender.com/api/users/${userId}/reservations`;
       const response = await axios.get(Reserve_url, {
         headers: {
           'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ export const getReservations = createAsyncThunk(
 
 export const deleteReservation = createAsyncThunk('deleteReservation', async (id) => {
   const userId = JSON.parse(localStorage.getItem('userId'));
-  const Reserve_url = `http://localhost:3000/api/users/${userId}/reservations/${id}`;
+  const Reserve_url = `https://heli-hire-capstone-backend.onrender.com/api/users/${userId}/reservations/${id}`;
   const response = await axios.delete(Reserve_url);
   return response.data;
 });
