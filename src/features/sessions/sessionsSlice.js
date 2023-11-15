@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const postRegister = createAsyncThunk('postRegister', async (data) => {
   const response = await fetch(
-    `http://127.0.0.1:3000/api/${data.endpoint}`,
+    `https://heli-hire-capstone-backend.onrender.com/api/${data.endpoint}`,
     {
       method: 'POST',
       headers: {
